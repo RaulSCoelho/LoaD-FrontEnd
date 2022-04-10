@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import styled from "styled-components"
-import { CgMenu, CgClose } from "react-icons/cg"
+import { IoMenuOutline as MenuIcon, IoClose as CloseIcon } from "react-icons/io5"
 
 function Navbar() {
-    const [sidebar, setSidebar] = useState(true)
+    const [sidebar, setSidebar] = useState(false)
     function showSidebar() {
         setSidebar(!sidebar)
     }
@@ -11,12 +11,12 @@ function Navbar() {
     return (<>
         <NavbarTop>
             <div onClick={showSidebar} className='menuIcon'>
-                <CgMenu size="1.5em" color='white' />
+                <MenuIcon size="2em" color='white' />
             </div>
         </NavbarTop>
         <Menu>
-            <div onClick={showSidebar} className={sidebar ? 'menu' : 'menu-active'}>
-                <CgClose className='closeMenu' size="2em" color='whhite' />
+            <div onClick={showSidebar} className={sidebar ? 'menu-active' : 'menu'}>
+                <CloseIcon className='closeMenu' size="2em" color='white' />
             </div>
         </Menu>
     </>)
