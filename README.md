@@ -1,1 +1,1 @@
-Projeto feito para alocar cursos
+Plataforma de ver aulas

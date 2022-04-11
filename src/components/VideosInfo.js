@@ -7,7 +7,7 @@ const VideosInfo = {
             "https://www.youtube.com/embed/I5tBQC6vmxE",
             "https://www.youtube.com/embed/6aWi7diL9xQ",
             "https://www.youtube.com/embed/Eie2wpAWBgY",
-            "https://www.youtube.com/embed/w3F12DP9L5k"
+            "https://www.youtube.com/embed/_s86Sl-EWqs"
         ],
         [
             "https://www.youtube.com/embed/bn3XrkDaqYE",

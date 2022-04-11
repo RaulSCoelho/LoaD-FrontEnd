@@ -94,7 +94,7 @@ h1.thumb{
     color: #fff;
   }
 
-  &:hover  .iconScrollVideosBack{
+  &:hover .iconScrollVideosBack{
     height: 3em;
     width: 3em;
     color: #fff;
