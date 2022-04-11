@@ -36,12 +36,12 @@ function Home() {
                         <div className="nextVideos">
                             {VideosInfo.videos.map((lessons, i) => (
                                 <Flex theme={Themes.flexColumn}>
-                                    <ScrollVideosBack row={i} lessonsQnt={lessons.length} />
+                                    <ScrollVideosBack row={i} />
                                     <ThemeProvider theme={Themes.mediumTitle}>
                                         <Title>{VideosInfo.titles[i][0]}</Title>
                                     </ThemeProvider>
                                     <NextVideos row={i} lessons={lessons} thumbnail={VideosInfo.thumbnails[i]} titles={VideosInfo.titles[i]} />
-                                    <ScrollVideosForward row={i} lessonsQnt={lessons.length} />
+                                    <ScrollVideosForward row={i} />
                                 </Flex>
                             ))}
                         </div>

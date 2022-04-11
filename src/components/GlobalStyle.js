@@ -5,6 +5,7 @@ export default createGlobalStyle`
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  scrollbar-width: none;
 }
 
 html {
@@ -60,6 +61,7 @@ code {
 
 .nextVideosRow{
   transition: 200ms;
+  overflow-x: scroll;
 }
 
 .thumbs:hover .thumb {
