@@ -4,8 +4,19 @@ import { IoMenuOutline as MenuIcon, IoClose as CloseIcon } from "react-icons/io5
 
 function Navbar() {
     const [sidebar, setSidebar] = useState(false)
+    const [scrollBack, setScrollBack] = useState(false)
     function showSidebar() {
+        const scroll = document.querySelectorAll('.iconScrollVideosBack')
+        setScrollBack(!scrollBack)
         setSidebar(!sidebar)
+
+        for (var i = 0; i < scroll.length; i++) {
+            if (scrollBack === false) {
+                scroll[i].style = "display: none;"
+            } else {
+                scroll[i].style = "display: unset;"
+            }
+        }
     }
 
     return (<>
@@ -54,7 +65,7 @@ export const Menu = styled.div`
         justify-content: center;
         position: fixed;
         top: 0;
-        left: -100%;
+        left: -200%;
         transition: 550ms;
     }
 

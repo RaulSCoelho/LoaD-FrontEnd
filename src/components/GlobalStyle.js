@@ -40,6 +40,13 @@ code {
   width: 80%;
 }
 
+.currentVideo{
+  @media (max-width: 1245px){
+    width: calc(100vw - 180px);
+    height: calc(calc(100vw - 180px) * 0.5625);
+  }
+}
+
 .nextVideos{
   border-top: 1px solid #444;
   padding-top: 30px;

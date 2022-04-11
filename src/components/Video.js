@@ -9,6 +9,7 @@ function Video(props) {
                 height={props.width ? `${props.width * 0.5625}px` : "315"}
                 src={props.url}
                 title={props.title}
+                className={props.name}
                 frameBorder="0"
                 allowFullScreen="allowfullscreen"
                 mozallowfullscreen="mozallowfullscreen"

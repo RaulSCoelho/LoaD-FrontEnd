@@ -15,21 +15,29 @@ const Themes = {
     },
     bigTitle: {
         fontSize: "48px",
-        color: "#fff"
+        maxSize: "48px",
+        color: "#fff",
+        viewWidth: "10vw"
     },
     mediumTitle: {
         fontSize: "24px",
+        maxSize: "24px",
         color: "#fff",
-        margin: "15px 0px 15px 0px"
+        margin: "15px 0px 15px 0px",
+        viewWidth: "6vw"
     },
     smallTitle: {
         fontSize: "16px",
+        maxSize: "16px",
         color: "#fff",
-        margin: "15px 0px 0px 0px"
+        margin: "15px 0px 0px 0px",
+        viewWidth: "32px"
     },
     smallSubTitle: {
         fontSize: "16px",
-        color: "#757575"
+        maxSize: "16px",
+        color: "#757575",
+        viewWidth: "1vw"
     }
 }
 

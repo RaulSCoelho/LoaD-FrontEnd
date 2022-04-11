@@ -20,14 +20,14 @@ function CurrentVideo() {
                 </BackOrForthButton>
                 <div className="currentVideoDiv">
                     {/* Vídeo atual */}
-                    <Video className="currentVideo" url={`${localStorage.getItem('currentVideo')}`} title={VideosInfo.titles[0][1]} width={854} />
+                    <Video name="currentVideo" url={`${localStorage.getItem('currentVideo')}`} title={VideosInfo.titles[0][1]} width={854} />
                     {/* Módulo da aula */}
                     <ThemeProvider theme={Themes.smallTitle}>
                         <Title>{`${localStorage.getItem('currentVideoModule')}`}</Title>
                     </ThemeProvider>
                     {/* Título da aula */}
                     <ThemeProvider theme={Themes.bigTitle}>
-                        <Title>{`${localStorage.getItem('currentVideoLesson')}`}</Title>
+                        <Title className="currentVideoTitle">{`${localStorage.getItem('currentVideoLesson')}`}</Title>
                     </ThemeProvider>
                 </div>
                 {/* Botão para avançar para o próximo video */}

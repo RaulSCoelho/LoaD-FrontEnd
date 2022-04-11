@@ -6,8 +6,13 @@ export const BackOrForthButton = styled.div`
     background-color: rgba(0, 0, 0, 0.75);
     border-radius: 50%;
     border: 2px solid white;
+    margin-bottom: 120px;
     display: flex;
     justify-content: center;
     align-items: center;
     cursor: pointer;
+
+    @media (max-width: 1245px){
+        display: none;
+    }
 `
