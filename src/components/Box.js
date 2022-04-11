@@ -10,4 +10,6 @@ export const Box = styled.div`
     text-align: ${props => props.theme.textAlign};
     margin: ${props => props.theme.margin};
     padding: ${props => props.theme.padding};
+    position: ${props => props.theme.position};
+    right: ${props => props.theme.right};
 `

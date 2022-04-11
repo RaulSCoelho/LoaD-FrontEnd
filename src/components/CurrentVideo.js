@@ -17,12 +17,12 @@ function CurrentVideo() {
                     <Back size="1.8em" color="white" />
                 </div>
                 <div className="currentVideoDiv">
-                    <Video className="currentVideo" url="https://www.youtube.com/embed/9W-M1qZW4Ww" title={VideosInfo.titles[0][1]} width={854} />
+                    <Video className="currentVideo" url={`${localStorage.getItem('currentVideo')}`} title={VideosInfo.titles[0][1]} width={854} />
                     <ThemeProvider theme={Themes.smallTitle}>
-                        <Title>{VideosInfo.titles[0][0]}</Title>
+                        <Title>{`${localStorage.getItem('currentVideoModule')}`}</Title>
                     </ThemeProvider>
                     <ThemeProvider theme={Themes.bigTitle}>
-                        <Title>{VideosInfo.titles[0][1]}</Title>
+                        <Title>{`${localStorage.getItem('currentVideoLesson')}`}</Title>
                     </ThemeProvider>
                 </div>
                 <div className="toggleVideo">

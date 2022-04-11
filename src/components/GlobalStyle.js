@@ -38,7 +38,7 @@ code {
 .toggleVideo{
   width: 72px;
   height: 72px;
-  background-color: black;
+  background-color: rgba(0, 0, 0, 0.75);
   border-radius: 50%;
   border: 2px solid white;
   display: flex;
@@ -55,19 +55,57 @@ code {
   border-top: 1px solid #444;
   padding-top: 30px;
   width: 90%;
+  overflow: hidden;
+}
+
+.nextVideosRow{
+  transition: 200ms;
+}
+
+.thumbs:hover .thumb {
+  width: 400px;
 }
 
 .thumb{
-  width: 300px;
+  width: 282px;
   cursor: pointer;
+  padding: 0px 20px 0px 0px;
   transition: 350ms;
-
-  &:hover{
-    width: 400px;
-  }
 }
 
 h1.thumb{
   height: 27.3px;
+}
+
+.scrollVideosForward, .scrollVideosBack{
+  position: absolute;
+  right: 50px;
+  width: 60px;
+  height: 60px;
+  padding-top: 20px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+  border: 0;
+  cursor: pointer;
+
+  &:hover .iconScrollVideosForward{
+    height: 3em;
+    width: 3em;
+    color: #fff;
+  }
+
+  &:hover  .iconScrollVideosBack{
+    height: 3em;
+    width: 3em;
+    color: #fff;
+  }
+}
+
+.scrollVideosBack{
+  right: unset;
+  left: 50px;
 }
 `

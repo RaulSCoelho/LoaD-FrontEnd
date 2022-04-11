@@ -6,19 +6,21 @@ import { Title } from "./Title";
 
 function NextVideos(props) {
 
-    function changeUrl(link){
-        //atualizar no banco o novo currentVideo
+    function changeUrl(link, i) {
+        localStorage.setItem('currentVideo', `${link}`)
+        localStorage.setItem('currentVideoModule', `${props.titles[0]}`)
+        localStorage.setItem('currentVideoLesson', `${props.titles[i + 1]}`)
         window.location.reload()
     }
 
     return (
         <ThemeProvider theme={Themes.flexRow}>
-            <Flex>
-                {props.module.map((link, i) =>
+            <Flex id={`nextVideosRow${props.row}`} className="nextVideosRow">
+                {props.lessons.map((link, i) =>
                     <div className="thumbs">
-                        <img className="thumb" onClick={() => changeUrl(link)} width="300px" src={props.thumbnail[i]} alt="Aula 1" />
+                        <img className="thumb" onClick={() => changeUrl(link, i)} width="300px" src={props.thumbnail[i]} alt="Aula 1" />
                         <ThemeProvider theme={Themes.smallSubTitle}>
-                            <Title className="thumb">{props.title[i + 1]}</Title>
+                            <Title className="thumb">{props.titles[i + 1]}</Title>
                         </ThemeProvider>
                     </div>
                 )}
