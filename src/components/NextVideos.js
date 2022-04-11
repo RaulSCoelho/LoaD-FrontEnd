@@ -18,7 +18,7 @@ function NextVideos(props) {
             <Flex id={`nextVideosRow${props.row}`} className="nextVideosRow">
                 {props.lessons.map((link, i) =>
                     <div className="thumbs">
-                        <img className="thumb" onClick={() => changeUrl(link, i)} width="300px" src={props.thumbnail[i]} alt="Aula 1" />
+                        <img className="thumb" onClick={() => changeUrl(link, i)} src={props.thumbnail[i]} alt={`Aula ${i}`} />
                         <ThemeProvider theme={Themes.smallSubTitle}>
                             <Title className="thumb">{props.titles[i + 1]}</Title>
                         </ThemeProvider>

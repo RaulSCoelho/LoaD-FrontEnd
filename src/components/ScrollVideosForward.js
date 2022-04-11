@@ -6,13 +6,20 @@ function ScrollVideosForward(props) {
 
     function slide() {
         const videoDiv = document.querySelector(`#nextVideosRow${props.row}`)
-        const thumbWidth = document.querySelector('img.thumb').offsetWidth
-        px += (thumbWidth * 2)
-        videoDiv.style.marginLeft = `-${px}px`
+        const forward = document.querySelector('.scrollVideosForward')
+        const thumb = document.querySelector('img.thumb').offsetWidth
+
+        var comprimento = thumb * props.lessonsQnt
+        if (videoDiv.offsetWidth < comprimento) {
+            px += (thumb * 2)
+            videoDiv.style.marginLeft = `${-px}px`
+            forward.dataset.qnt = parseInt(forward.dataset.qnt) + 1
+            videoDiv.style.width = `${videoDiv.offsetWidth + thumb}px`
+        }
     }
 
     return (
-        <div onClick={slide} className="scrollVideosForward" style={{ color: '#757575' }}>
+        <div onClick={slide} className="scrollVideosForward" data-qnt="0" style={{ color: '#757575' }}>
             <Forward className="iconScrollVideosForward" size={'2em'} />
         </div>
     )

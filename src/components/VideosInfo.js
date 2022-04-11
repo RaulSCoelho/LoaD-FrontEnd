@@ -1,11 +1,3 @@
-import aula1 from '../assets/images/aula_1.png'
-import aula2 from '../assets/images/aula_2.png'
-import aula3 from '../assets/images/aula_3.png'
-import aula4 from '../assets/images/aula_4.png'
-import aula5 from '../assets/images/aula_5.png'
-import aula6 from '../assets/images/aula_6.png'
-import aula7 from '../assets/images/aula_7.png'
-
 const VideosInfo = {
     videos: [
         [
@@ -64,25 +56,25 @@ const VideosInfo = {
     ],
     thumbnails: [
         [
-            aula1,
-            aula2,
-            aula3,
-            aula4,
-            aula5,
-            aula6,
-            aula7
+            "https://chi01pap002files.storage.live.com/y4m-OTxSWyLz7YaTG3CIjs_zEXlVaD8Mh36gw95mVst6nJmxJJwsECk45Z46epbg_fxTNK4FgVfVwx3sXz6QNf8VGlD9-eTPh9AIbraTF2lTo9wP_fcX9gJ-_g_U9Wix3ng1-qulMGIgCqtJpM6xx1Gcw8z_o6WwrySlDRm-vQEUTOGqpspTo-WP1_uBpn1g_Pd?width=1280&height=720&cropmode=none",
+            "https://chi01pap002files.storage.live.com/y4m49ioL32uHKPYMlpLtmQE4T5aq4a3JCP5BXI60w-HniCzVnWnOQAN3oCQ8o6wn2kK11CCI9y2LoegzhnKj3dl5j0VpQBTUrN97mSTasx9nB9gfVKqvs8nyCjSxcea_8rxQuMa4ztCwmAjFEkUkaioJz0G_C8A-Q7SLNnt8IG3VayABoW0tR0LRfCsZCp6lAoB?width=1280&height=720&cropmode=none",
+            "https://chi01pap002files.storage.live.com/y4muHqHefTnv7bVB5hL-_MBgH-X7yYiunXirWZndDNtep8fUxmeD2F4djcphYHtfysWfmDKZZGMgs8JSUeFYvw4uJfgnyiRN3SpbTljrQYmik9RQxkfNAwLIhSphR4M3F6FNirhJ6vfuMNCoWGRf3kZjUNHOpkLEhzaO7SHEzac-5023A9lqAeBqnspW0nc-eCH?width=1280&height=720&cropmode=none",
+            "https://chi01pap002files.storage.live.com/y4mBgCUpe67wlfQhsvIJK3CLnYDtbbbh1RVK6FHhDxt2IqrUxmZU29exkyIe8ObFAhEITqrAreL6PPEhJJGZwA6va8bRY0He6SiZOvP8_muC_3qGCEZaJoHMgE1Y3jKch-KRjaimlOjqkSdVaC0lCG4rCijGldj2nzRRbnj63Nr-ALvEl_4tLy4yjURGmSEPNl8?width=1280&height=720&cropmode=none",
+            "https://chi01pap002files.storage.live.com/y4m0gbhhocC-Hfc5PBPXnlVsWZS_VmNITNk7oT4CZEkz7uRGJB0vyhGKHqBRY01UF2KW0sdx5lOKPATTYLTqfFlrb_N5IcZ5KELJw6aFGUAEWq0DJFAmUUU5U-15OqASr5qTQ-JIVd7UCc9aw31WNBGfNPI32ncIazJJpuH1HKeFyj76HFZ79hpSfxeBVDkWRO0?width=1280&height=720&cropmode=none",
+            "https://chi01pap002files.storage.live.com/y4mvq9svlvNmyYwR8TTY3knNExYij7QXiKXecoX-UPE4gRIKqvEdQ2XhC0NpP6dd2RxYjoY2QQBZBznjZ6n8HhTcZHEsOL_LHD6Lgkeen8ELXHRbkj8PgtyEkDPLacVUSxKjFy5JdsApgn7EWgIC7NWNFg-WV_SBO2xZNUj8n-OnTPLMh8EMDT9ZeNItbRkpE4R?width=1280&height=720&cropmode=none",
+            "https://chi01pap002files.storage.live.com/y4m4ZyNTyJ84vjF2rBCGDMNM8YU7Uivdp9Y3nWXA7m1-y3twVssIZoF-fkL-S2KbL3XeV9a9XdzoyqeKM6y3SZqs3d_lFthM83dsZPvy34IV1P8hyA-0kUyPFrsW-qrF4jbhbOnLMUbDjHlloOAop8767RjKmeOEGl2Pd4Iwmp1FLjr9q0AIf-n0Xn_mOj1qV2m?width=1280&height=720&cropmode=none"
         ],
         [
-            aula1,
-            aula1,
-            aula1,
-            aula2
+            "https://chi01pap002files.storage.live.com/y4m-OTxSWyLz7YaTG3CIjs_zEXlVaD8Mh36gw95mVst6nJmxJJwsECk45Z46epbg_fxTNK4FgVfVwx3sXz6QNf8VGlD9-eTPh9AIbraTF2lTo9wP_fcX9gJ-_g_U9Wix3ng1-qulMGIgCqtJpM6xx1Gcw8z_o6WwrySlDRm-vQEUTOGqpspTo-WP1_uBpn1g_Pd?width=1280&height=720&cropmode=none",
+            "https://chi01pap002files.storage.live.com/y4m49ioL32uHKPYMlpLtmQE4T5aq4a3JCP5BXI60w-HniCzVnWnOQAN3oCQ8o6wn2kK11CCI9y2LoegzhnKj3dl5j0VpQBTUrN97mSTasx9nB9gfVKqvs8nyCjSxcea_8rxQuMa4ztCwmAjFEkUkaioJz0G_C8A-Q7SLNnt8IG3VayABoW0tR0LRfCsZCp6lAoB?width=1280&height=720&cropmode=none",
+            "https://chi01pap002files.storage.live.com/y4muHqHefTnv7bVB5hL-_MBgH-X7yYiunXirWZndDNtep8fUxmeD2F4djcphYHtfysWfmDKZZGMgs8JSUeFYvw4uJfgnyiRN3SpbTljrQYmik9RQxkfNAwLIhSphR4M3F6FNirhJ6vfuMNCoWGRf3kZjUNHOpkLEhzaO7SHEzac-5023A9lqAeBqnspW0nc-eCH?width=1280&height=720&cropmode=none",
+            "https://chi01pap002files.storage.live.com/y4mBgCUpe67wlfQhsvIJK3CLnYDtbbbh1RVK6FHhDxt2IqrUxmZU29exkyIe8ObFAhEITqrAreL6PPEhJJGZwA6va8bRY0He6SiZOvP8_muC_3qGCEZaJoHMgE1Y3jKch-KRjaimlOjqkSdVaC0lCG4rCijGldj2nzRRbnj63Nr-ALvEl_4tLy4yjURGmSEPNl8?width=1280&height=720&cropmode=none"
         ],
         [
-            aula1,
-            aula1,
-            aula1,
-            aula2
+            "https://chi01pap002files.storage.live.com/y4m-OTxSWyLz7YaTG3CIjs_zEXlVaD8Mh36gw95mVst6nJmxJJwsECk45Z46epbg_fxTNK4FgVfVwx3sXz6QNf8VGlD9-eTPh9AIbraTF2lTo9wP_fcX9gJ-_g_U9Wix3ng1-qulMGIgCqtJpM6xx1Gcw8z_o6WwrySlDRm-vQEUTOGqpspTo-WP1_uBpn1g_Pd?width=1280&height=720&cropmode=none",
+            "https://chi01pap002files.storage.live.com/y4m49ioL32uHKPYMlpLtmQE4T5aq4a3JCP5BXI60w-HniCzVnWnOQAN3oCQ8o6wn2kK11CCI9y2LoegzhnKj3dl5j0VpQBTUrN97mSTasx9nB9gfVKqvs8nyCjSxcea_8rxQuMa4ztCwmAjFEkUkaioJz0G_C8A-Q7SLNnt8IG3VayABoW0tR0LRfCsZCp6lAoB?width=1280&height=720&cropmode=none",
+            "https://chi01pap002files.storage.live.com/y4muHqHefTnv7bVB5hL-_MBgH-X7yYiunXirWZndDNtep8fUxmeD2F4djcphYHtfysWfmDKZZGMgs8JSUeFYvw4uJfgnyiRN3SpbTljrQYmik9RQxkfNAwLIhSphR4M3F6FNirhJ6vfuMNCoWGRf3kZjUNHOpkLEhzaO7SHEzac-5023A9lqAeBqnspW0nc-eCH?width=1280&height=720&cropmode=none",
+            "https://chi01pap002files.storage.live.com/y4mBgCUpe67wlfQhsvIJK3CLnYDtbbbh1RVK6FHhDxt2IqrUxmZU29exkyIe8ObFAhEITqrAreL6PPEhJJGZwA6va8bRY0He6SiZOvP8_muC_3qGCEZaJoHMgE1Y3jKch-KRjaimlOjqkSdVaC0lCG4rCijGldj2nzRRbnj63Nr-ALvEl_4tLy4yjURGmSEPNl8?width=1280&height=720&cropmode=none"
         ]
     ]
 }
