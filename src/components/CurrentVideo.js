@@ -7,7 +7,6 @@ import { IoChevronBackOutline as Back } from "react-icons/io5"
 import Video from "../components/Video";
 import VideosInfo from "../components/VideosInfo";
 import Themes from "../components/Themes"
-import { BackOrForthButton } from "./BackOrForthButton";
 
 function CurrentVideo() {
 
@@ -31,9 +30,9 @@ function CurrentVideo() {
             localStorage.setItem('currentVideoIndex', currentVideoIndex - 1)
             localStorage.setItem('currentVideoTitle', videoTitle)
             localStorage.setItem('currentVideoModule', videoModule)
-        }else if(currentModuleIndex !== '0'){
-            const videoLink = VideosInfo.videos[parseInt(currentModuleIndex) - 1][VideosInfo.videos[(parseInt(currentModuleIndex)-1)].length - 1]
-            const videoTitle = VideosInfo.titles[parseInt(currentModuleIndex) - 1][VideosInfo.titles[(parseInt(currentModuleIndex)-1)].length - 1]
+        } else if (currentModuleIndex !== '0') {
+            const videoLink = VideosInfo.videos[parseInt(currentModuleIndex) - 1][VideosInfo.videos[(parseInt(currentModuleIndex) - 1)].length - 1]
+            const videoTitle = VideosInfo.titles[parseInt(currentModuleIndex) - 1][VideosInfo.titles[(parseInt(currentModuleIndex) - 1)].length - 1]
             const videoModule = VideosInfo.titles[parseInt(currentModuleIndex) - 1][0]
 
             currentVideo.src = videoLink
@@ -41,7 +40,7 @@ function CurrentVideo() {
             currentVideoModule.innerHTML = videoModule
 
             localStorage.setItem('currentVideo', videoLink)
-            localStorage.setItem('currentVideoIndex', VideosInfo.videos[(parseInt(currentModuleIndex)-1)].length - 1)
+            localStorage.setItem('currentVideoIndex', VideosInfo.videos[(parseInt(currentModuleIndex) - 1)].length - 1)
             localStorage.setItem('currentVideoTitle', videoTitle)
             localStorage.setItem('currentVideoModule', videoModule)
             localStorage.setItem('currentVideoModuleIndex', parseInt(currentModuleIndex) - 1)
@@ -68,7 +67,7 @@ function CurrentVideo() {
             localStorage.setItem('currentVideoIndex', parseInt(currentVideoIndex) + 1)
             localStorage.setItem('currentVideoTitle', videoTitle)
             localStorage.setItem('currentVideoModule', videoModule)
-        }else{
+        } else {
             const videoLink = VideosInfo.videos[parseInt(currentModuleIndex) + 1][0]
             const videoTitle = VideosInfo.titles[parseInt(currentModuleIndex) + 1][1]
             const videoModule = VideosInfo.titles[parseInt(currentModuleIndex) + 1][0]
@@ -89,9 +88,9 @@ function CurrentVideo() {
         <ThemeProvider theme={Themes.flexRow}>
             <Flex>
                 {/* Botão para voltar pro video anterior */}
-                <BackOrForthButton className="backBtnDiv" onClick={back}>
-                    <Back className="backBtn" size="1.8em" color="white" />
-                </BackOrForthButton>
+                <div className="backBtnDiv" onClick={back}>
+                    <Back size="1.8em" color="white" />
+                </div>
                 <div className="currentVideoDiv">
                     {/* Vídeo atual */}
                     <Video url={`${localStorage.getItem('currentVideo')}`} title={VideosInfo.titles[0][1]} width={854} />
@@ -105,9 +104,9 @@ function CurrentVideo() {
                     </ThemeProvider>
                 </div>
                 {/* Botão para avançar para o próximo video */}
-                <BackOrForthButton className="nextBtnDiv" onClick={next}>
-                    <Forward className="nextBtn" size="1.8em" color="white" />
-                </BackOrForthButton>
+                <div className="nextBtnDiv" onClick={next}>
+                    <Forward size="1.8em" color="white" />
+                </div>
             </Flex>
         </ThemeProvider>
     )

@@ -113,6 +113,20 @@ h1.thumb{
   }
 }
 
+.backBtnDiv, .nextBtnDiv{
+  width: 72px;
+  height: 72px;
+  background-color: rgba(0, 0, 0, 0.75);
+  border-radius: 50%;
+  border: 2px solid white;
+  margin-bottom: 120px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+    
 .backBtnDiv {
   @media (max-width: 1245px){
     position: fixed;
@@ -121,16 +135,16 @@ h1.thumb{
     margin: 0;
     width: 50vw;
     border-radius: 0;
-    border: 0;
+    border: none;
     background-color: black;
     border-top: 1px solid #313131;
     border-bottom: 1px solid #313131;
     border-right: 1px solid #313131;
 
     &:hover {
-      background-color: #313131;
-      border-bottom: 3px solid #313131;
-      height: 73px;
+        background-color: #313131;
+        border-bottom: 3px solid #313131;
+        height: 73px;
     }
   }
 }
@@ -143,7 +157,7 @@ h1.thumb{
     margin: 0;
     width: 50vw;
     border-radius: 0;
-    border: 0;
+    border: none;
     background-color: black;
     border-top: 1px solid #313131;
     border-bottom: 1px solid #313131;
