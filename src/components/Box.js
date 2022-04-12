@@ -22,6 +22,7 @@ export const Box = styled("div")(
             flexDirection: props.direction,
             textAlign: props.textAlign,
             margin: props.margin,
+            width: props.width,
             padding: props.padding,
             position: props.position,
             right: props.right,
