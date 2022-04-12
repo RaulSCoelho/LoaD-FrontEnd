@@ -16,6 +16,14 @@ function Home() {
     useEffect(() => {
         console.log(VideosInfo.videos[0][0])
         if (localStorage.getItem('currentVideo') == null) {
+            const currentVideo = document.querySelector('.currentVideo')
+            const currentVideoTitle = document.querySelector('.currentVideoTitle')
+            const currentVideoModule = document.querySelector('.currentVideoModule')
+
+            currentVideo.src = VideosInfo.videos[0][0]
+            currentVideoTitle.innerHTML = VideosInfo.titles[0][1]
+            currentVideoModule.innerHTML = VideosInfo.titles[0][0]
+
             localStorage.setItem('currentVideo', VideosInfo.videos[0][0])
             localStorage.setItem('currentVideoIndex', 1)
             localStorage.setItem('currentVideoTitle', VideosInfo.titles[0][1])
