@@ -79,37 +79,4 @@ h1.thumb{
   max-width: 282px;
   height: 27.3px;
 }
-
-.scrollVideosForward, .scrollVideosBack{
-  position: absolute;
-  right: 50px;
-  width: 60px;
-  height: 60px;
-  padding-top: 20px;
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: transparent;
-  border: 0;
-  cursor: pointer;
-
-  &:hover .iconScrollVideosForward, &:hover .iconScrollVideosBack{
-    height: 3em;
-    width: 3em;
-    color: #fff;
-  }
-}
-
-.scrollVideosBack{
-  right: unset;
-  left: 50px;
-}
-
-.currentVideoTitle, .currentVideoModule{
-  @media (max-width: 750px){
-    width: 100vw;
-    text-align: center;
-  }
-}
 `
