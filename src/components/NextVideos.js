@@ -3,14 +3,30 @@ import Themes from "./Themes";
 import { ThemeProvider } from "styled-components";
 import { Flex } from "./Flex";
 import { Title } from "./Title";
+import VideosInfo from "./VideosInfo";
 
 function NextVideos(props) {
 
     function changeUrl(link, i) {
-        localStorage.setItem('currentVideo', `${link}`)
-        localStorage.setItem('currentVideoModule', `${props.titles[0]}`)
-        localStorage.setItem('currentVideoLesson', `${props.titles[i + 1]}`)
-        window.location.reload()
+        const currentVideo = document.querySelector('.currentVideo')
+        const currentVideoTitle = document.querySelector('.currentVideoTitle')
+        const currentVideoModule = document.querySelector('.currentVideoModule')
+
+        const videoTitle = props.titles[i + 1]
+        const videoModule = props.titles[0]
+        const videoModuleIndex = VideosInfo.videos.indexOf(props.lessons)
+
+        currentVideo.src = link
+        currentVideoTitle.innerHTML = videoTitle
+        currentVideoModule.innerHTML = videoModule
+
+        localStorage.setItem('currentVideo', link)
+        localStorage.setItem('currentVideoIndex', i)
+        localStorage.setItem('currentVideoTitle', videoTitle)
+        localStorage.setItem('currentVideoModule', videoModule)
+        localStorage.setItem('currentVideoModuleIndex', videoModuleIndex)
+
+        currentVideo.src = link
     }
 
     return (

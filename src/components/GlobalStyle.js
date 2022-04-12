@@ -60,6 +60,7 @@ code {
 }
 
 .thumbs:hover .thumb {
+  max-width: unset;
   width: 400px;
 }
 
@@ -71,6 +72,7 @@ code {
 }
 
 h1.thumb{
+  max-width: 282px;
   height: 27.3px;
 }
 
@@ -88,13 +90,7 @@ h1.thumb{
   border: 0;
   cursor: pointer;
 
-  &:hover .iconScrollVideosForward{
-    height: 3em;
-    width: 3em;
-    color: #fff;
-  }
-
-  &:hover .iconScrollVideosBack{
+  &:hover .iconScrollVideosForward, &:hover .iconScrollVideosBack{
     height: 3em;
     width: 3em;
     color: #fff;

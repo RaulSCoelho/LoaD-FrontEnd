@@ -17,12 +17,10 @@ function Home() {
         console.log(VideosInfo.videos[0][0])
         if (localStorage.getItem('currentVideo') == null) {
             localStorage.setItem('currentVideo', VideosInfo.videos[0][0])
-        }
-        if (localStorage.getItem('currentVideoModule') == null) {
+            localStorage.setItem('currentVideoIndex', 1)
+            localStorage.setItem('currentVideoTitle', VideosInfo.titles[0][1])
             localStorage.setItem('currentVideoModule', VideosInfo.titles[0][0])
-        }
-        if (localStorage.getItem('currentVideoLesson') == null) {
-            localStorage.setItem('currentVideoLesson', VideosInfo.titles[0][1])
+            localStorage.setItem('currentVideoModuleIndex', 0)
         }
     })
 

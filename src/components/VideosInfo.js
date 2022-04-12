@@ -10,7 +10,7 @@ const VideosInfo = {
             "https://www.youtube.com/embed/_s86Sl-EWqs"
         ],
         [
-            "https://www.youtube.com/embed/bn3XrkDaqYE",
+            "https://www.youtube.com/embed/1OGNeprD7qI",
             "https://www.youtube.com/embed/bn3XrkDaqYE",
             "https://www.youtube.com/embed/bn3XrkDaqYE",
             "https://www.youtube.com/embed/9W-M1qZW4Ww"
@@ -35,13 +35,10 @@ const VideosInfo = {
         ],
         [
             "MÓDULO 2: Por que começar a investir hoje?",
-            "Aula 1 - O começo da Liberdade Financeira",
-            "Aula 2 - O estresse causado pela falta de dinheiro",
-            "Aula 3 - Como eu comecei a investir",
-            "Aula 4 - Da pra investir com pouco dinheiro?",
-            "Aula 5 - Vou te provar que você está perdendo dinheiro hoje",
-            "Aula 6 - Como eu ganho dinheiro enquanto durmo",
-            "Aula 7 - Tipos de operações no mercado financeiro"
+            "Aula 8 - Os principais problemas financeiros dos brasileiros",
+            "Aula 9 - Planilha de gestão de gastos e investimentos",
+            "Aula 10 - Dicas para manter o controle na planilha",
+            "Aula 11 - Aplicativo de gerenciamento de investimentos"
         ],
         [
             "MÓDULO 3: Por que começar a investir hoje?",
@@ -65,7 +62,7 @@ const VideosInfo = {
             "https://chi01pap002files.storage.live.com/y4m4ZyNTyJ84vjF2rBCGDMNM8YU7Uivdp9Y3nWXA7m1-y3twVssIZoF-fkL-S2KbL3XeV9a9XdzoyqeKM6y3SZqs3d_lFthM83dsZPvy34IV1P8hyA-0kUyPFrsW-qrF4jbhbOnLMUbDjHlloOAop8767RjKmeOEGl2Pd4Iwmp1FLjr9q0AIf-n0Xn_mOj1qV2m?width=1280&height=720&cropmode=none"
         ],
         [
-            "https://chi01pap002files.storage.live.com/y4m-OTxSWyLz7YaTG3CIjs_zEXlVaD8Mh36gw95mVst6nJmxJJwsECk45Z46epbg_fxTNK4FgVfVwx3sXz6QNf8VGlD9-eTPh9AIbraTF2lTo9wP_fcX9gJ-_g_U9Wix3ng1-qulMGIgCqtJpM6xx1Gcw8z_o6WwrySlDRm-vQEUTOGqpspTo-WP1_uBpn1g_Pd?width=1280&height=720&cropmode=none",
+            "https://chi01pap002files.storage.live.com/y4mc4pBVHM9eBfmxhU34XI7NPUwdp_3xt6GyLt7Ed9blFBLrpsJEEeVQyrhTSoMvPdgil-bqScIXmlrZQHC0O0KlLGtVVTS_PuegNKJroDUx7CbBoPk4fshXHAijOyeLMR0BY2XpM-b5rC9wiUSp30QT7t8wntBvDvDdvRrI449ZYy_Bbl3gCTdJ4laMqt0p0wC?width=1919&height=1079&cropmode=none",
             "https://chi01pap002files.storage.live.com/y4m49ioL32uHKPYMlpLtmQE4T5aq4a3JCP5BXI60w-HniCzVnWnOQAN3oCQ8o6wn2kK11CCI9y2LoegzhnKj3dl5j0VpQBTUrN97mSTasx9nB9gfVKqvs8nyCjSxcea_8rxQuMa4ztCwmAjFEkUkaioJz0G_C8A-Q7SLNnt8IG3VayABoW0tR0LRfCsZCp6lAoB?width=1280&height=720&cropmode=none",
             "https://chi01pap002files.storage.live.com/y4muHqHefTnv7bVB5hL-_MBgH-X7yYiunXirWZndDNtep8fUxmeD2F4djcphYHtfysWfmDKZZGMgs8JSUeFYvw4uJfgnyiRN3SpbTljrQYmik9RQxkfNAwLIhSphR4M3F6FNirhJ6vfuMNCoWGRf3kZjUNHOpkLEhzaO7SHEzac-5023A9lqAeBqnspW0nc-eCH?width=1280&height=720&cropmode=none",
             "https://chi01pap002files.storage.live.com/y4mBgCUpe67wlfQhsvIJK3CLnYDtbbbh1RVK6FHhDxt2IqrUxmZU29exkyIe8ObFAhEITqrAreL6PPEhJJGZwA6va8bRY0He6SiZOvP8_muC_3qGCEZaJoHMgE1Y3jKch-KRjaimlOjqkSdVaC0lCG4rCijGldj2nzRRbnj63Nr-ALvEl_4tLy4yjURGmSEPNl8?width=1280&height=720&cropmode=none"
