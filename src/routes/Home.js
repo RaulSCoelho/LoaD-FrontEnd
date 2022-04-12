@@ -25,7 +25,7 @@ function Home() {
             currentVideoModule.innerHTML = VideosInfo.titles[0][0]
 
             localStorage.setItem('currentVideo', VideosInfo.videos[0][0])
-            localStorage.setItem('currentVideoIndex', 1)
+            localStorage.setItem('currentVideoIndex', 0)
             localStorage.setItem('currentVideoTitle', VideosInfo.titles[0][1])
             localStorage.setItem('currentVideoModule', VideosInfo.titles[0][0])
             localStorage.setItem('currentVideoModuleIndex', 0)
