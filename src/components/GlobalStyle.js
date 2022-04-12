@@ -118,6 +118,7 @@ h1.thumb{
     position: fixed;
     top: 70px;
     left: 0;
+    margin: 0;
     width: 50vw;
     border-radius: 0;
     border: 0;
@@ -139,6 +140,7 @@ h1.thumb{
     position: fixed;
     top: 70px;
     right: 0;
+    margin: 0;
     width: 50vw;
     border-radius: 0;
     border: 0;

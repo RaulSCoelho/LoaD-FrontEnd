@@ -11,8 +11,4 @@ export const BackOrForthButton = styled.div`
     justify-content: center;
     align-items: center;
     cursor: pointer;
-
-    @media (max-width: 750px){
-        margin: 0;
-    }
 `
