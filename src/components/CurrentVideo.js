@@ -7,6 +7,8 @@ import { IoChevronBackOutline as Back } from "react-icons/io5"
 import Video from "../components/Video";
 import VideosInfo from "../components/VideosInfo";
 import Themes from "../components/Themes"
+import { PreviousVideoBtn } from "./PreviousVideoBtn";
+import { NextVideoBtn } from "./NextVideoBtn";
 
 function CurrentVideo() {
 
@@ -88,9 +90,9 @@ function CurrentVideo() {
         <ThemeProvider theme={Themes.flexRow}>
             <Flex>
                 {/* Botão para voltar pro video anterior */}
-                <div className="backBtnDiv" onClick={back}>
+                <PreviousVideoBtn onClick={back}>
                     <Back size="1.8em" color="white" />
-                </div>
+                </PreviousVideoBtn>
                 <div className="currentVideoDiv">
                     {/* Vídeo atual */}
                     <Video url={`${localStorage.getItem('currentVideo')}`} title={VideosInfo.titles[0][1]} width={854} />
@@ -104,9 +106,9 @@ function CurrentVideo() {
                     </ThemeProvider>
                 </div>
                 {/* Botão para avançar para o próximo video */}
-                <div className="nextBtnDiv" onClick={next}>
+                <NextVideoBtn onClick={next}>
                     <Forward size="1.8em" color="white" />
-                </div>
+                </NextVideoBtn>
             </Flex>
         </ThemeProvider>
     )
