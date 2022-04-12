@@ -14,7 +14,7 @@ export const NextVideoBtnSmallVW = styled.div`
 
     &:hover {
         background-color: #313131;
-        height: 73px;
+        height: 72.5px;
     }
 
     @media (max-width: 1258px){
