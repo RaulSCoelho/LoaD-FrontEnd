@@ -5,16 +5,33 @@ import { IoMenuOutline as MenuIcon, IoClose as CloseIcon } from "react-icons/io5
 function Navbar() {
     const [sidebar, setSidebar] = useState(false)
     const [scrollBack, setScrollBack] = useState(false)
+    const [scrollForward, setScrollForward] = useState(false)
     function showSidebar() {
-        const scroll = document.querySelectorAll('.iconScrollVideosBack')
+        const scrollBackIcon = document.querySelectorAll('.iconScrollVideosBack')
+        const scrollForwardIcon = document.querySelectorAll('.iconScrollVideosForward')
+        const previousVideo = document.querySelector('.previousVideo')
+        const nextVideo = document.querySelector('.nextVideo')
+        let viewWidth = window.innerWidth
         setScrollBack(!scrollBack)
+        setScrollForward(!scrollForward)
         setSidebar(!sidebar)
 
-        for (let i = 0; i < scroll.length; i++) {
+        
+        for (let i = 0; i < scrollBackIcon.length; i++) {
             if (scrollBack === false) {
-                scroll[i].style = "display: none;"
+                scrollBackIcon[i].style = "display: none;"
+                previousVideo.style = "display: none;"
+                nextVideo.style = "display: none;"
+                if(viewWidth < 768){
+                    scrollForwardIcon[i].style = "display: none;"
+                }
             } else {
-                scroll[i].style = "display: unset;"
+                scrollBackIcon[i].style = "display: unset;"
+                previousVideo.style = "display: flex;"
+                nextVideo.style = "display: flex;"
+                if(viewWidth < 768){
+                    scrollForwardIcon[i].style = "display: unset;"
+                }
             }
         }
     }
@@ -80,6 +97,10 @@ export const Menu = styled.div`
     .menu-active{
         transition: 350ms;
         left: 0;
+
+        @media (max-width: 768px){
+            width: 100vw;
+        }
     }
 
     .closeMenu{

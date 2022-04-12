@@ -90,7 +90,7 @@ function CurrentVideo() {
         <ThemeProvider theme={Themes.flexRow}>
             <Flex>
                 {/* Botão para voltar pro video anterior */}
-                <PreviousVideoBtn onClick={back}>
+                <PreviousVideoBtn className="previousVideo" onClick={back}>
                     <Back size="1.8em" color="white" />
                 </PreviousVideoBtn>
                 <div className="currentVideoDiv">
@@ -106,7 +106,7 @@ function CurrentVideo() {
                     </ThemeProvider>
                 </div>
                 {/* Botão para avançar para o próximo video */}
-                <NextVideoBtn onClick={next}>
+                <NextVideoBtn className="nextVideo" onClick={next}>
                     <Forward size="1.8em" color="white" />
                 </NextVideoBtn>
             </Flex>
