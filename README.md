@@ -1,5 +1,5 @@
 >:construction: Projeto em construção :construction:
-# Live your Life of a *Dream*
+# Live your *Life of a Dream*
 ## Finance classes
 **Learn how to invest your money properly**
 
