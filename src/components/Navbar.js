@@ -10,7 +10,7 @@ function Navbar() {
         setScrollBack(!scrollBack)
         setSidebar(!sidebar)
 
-        for (var i = 0; i < scroll.length; i++) {
+        for (let i = 0; i < scroll.length; i++) {
             if (scrollBack === false) {
                 scroll[i].style = "display: none;"
             } else {

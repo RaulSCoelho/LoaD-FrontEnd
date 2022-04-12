@@ -34,14 +34,22 @@ function ScrollVideosForward(props) {
         videoDiv.scrollLeft += 282
     }
     
-    var repeater
+    let repeater
 
     function whileMouseEnter(){
-        repeater = setInterval(slide, 1000)
+        let viewWidth = window.innerWidth
+
+        if(viewWidth > 750){
+            repeater = setInterval(slide, 1000)
+        }
     }
 
     function ifMouseLeave(){
-        clearInterval(repeater)
+        let viewWidth = window.innerWidth
+
+        if(viewWidth > 750){
+            clearInterval(repeater)
+        }
     }
 
     return (
