@@ -1,9 +1,7 @@
 import React from "react";
-import Themes from "./Themes";
-import { ThemeProvider } from "styled-components";
+import VideosInfo from "./VideosInfo";
 import { Flex } from "./Flex";
 import { Title } from "./Title";
-import VideosInfo from "./VideosInfo";
 
 function NextVideos(props) {
 
@@ -30,18 +28,16 @@ function NextVideos(props) {
     }
 
     return (
-        <ThemeProvider theme={Themes.flexRow}>
-            <Flex id={`nextVideosRow${props.row}`} className="nextVideosRow">
-                {props.lessons.map((link, i) =>
-                    <div className="thumbs">
-                        <img className="thumb" onClick={() => changeUrl(link, i)} src={props.thumbnail[i]} alt={`Aula ${i}`} />
-                        <ThemeProvider theme={Themes.smallSubTitle}>
-                            <Title className="thumb">{props.titles[i + 1]}</Title>
-                        </ThemeProvider>
-                    </div>
-                )}
-            </Flex>
-        </ThemeProvider>
+        <Flex width="100%" direction="row" justify="space-between" id={`nextVideosRow${props.row}`} className="nextVideosRow">
+            {props.lessons.map((link, i) =>
+                <div className="thumbs">
+                    <img className="thumb" onClick={() => changeUrl(link, i)} src={props.thumbnail[i]} alt={`Aula ${i}`} />
+                    <Title className="thumb" fontSize="16px" color="#757575" margin="15px 0px 10px 0px" viewWidth="32px">
+                        {props.titles[i + 1]}
+                    </Title>
+                </div>
+            )}
+        </Flex>
     )
 }
 

@@ -3,27 +3,17 @@ import styled from "styled-components"
 import { IoChevronForwardOutline as Forward } from "react-icons/io5"
 
 export const ScrollVideosForwardDiv = styled.div`
-position: absolute;
-right: 50px;
 width: 60px;
 height: 60px;
-padding-top: 20px;
-border-radius: 50%;
 display: flex;
 justify-content: center;
 align-items: center;
-background-color: transparent;
-border: 0;
 cursor: pointer;
 
 &:hover .iconScrollVideosForward{
     height: 3em;
     width: 3em;
     color: #fff;
-}
-
-@media (max-width: 750px){
-    right: -20px;
 }
 `
 
@@ -39,7 +29,7 @@ function ScrollVideosForward(props) {
     function whileMouseEnter(){
         let viewWidth = window.innerWidth
 
-        if(viewWidth > 750){
+        if(viewWidth > 920){
             repeater = setInterval(slide, 1000)
         }
     }
@@ -47,7 +37,7 @@ function ScrollVideosForward(props) {
     function ifMouseLeave(){
         let viewWidth = window.innerWidth
 
-        if(viewWidth > 750){
+        if(viewWidth > 920){
             clearInterval(repeater)
         }
     }

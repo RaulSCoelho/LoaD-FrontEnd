@@ -1,23 +1,30 @@
-import styled from "styled-components"
+import styled from "@emotion/styled";
 
-export const Box = styled.div`
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: ${props => props.theme.direction};
-    justify-content: center;
-    align-items: center;
-    text-align: ${props => props.theme.textAlign};
-    margin: ${props => props.theme.margin};
-    padding: ${props => props.theme.padding};
-    position: ${props => props.theme.position};
-    right: ${props => props.theme.right};
+export const Box = styled("div")(
+    {
+        width: "100%",
+        height: "100%",
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
 
-    @media (max-width: 1245px){
-        margin-top: 72px;
+        "@media (max-width: 1258px)": {
+            marginTop: "72px"
+        },
+
+        "@media (max-width: 920px)": {
+            padding: "0",
+            marginTop: "0px"
+        }
+    },
+    (props) => {
+        return {
+            flexDirection: props.direction,
+            textAlign: props.textAlign,
+            margin: props.margin,
+            padding: props.padding,
+            position: props.position,
+            right: props.right,
+        }
     }
-
-    @media (max-width: 750px){
-        padding: 0;
-    }
-`
+)

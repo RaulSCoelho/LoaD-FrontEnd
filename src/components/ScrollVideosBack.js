@@ -3,27 +3,17 @@ import styled from "styled-components"
 import { IoChevronBackOutline as Back } from "react-icons/io5"
 
 export const ScrollVideosBackDiv = styled.div`
-position: absolute;
-left: 50px;
 width: 60px;
 height: 60px;
-padding-top: 20px;
-border-radius: 50%;
 display: flex;
 justify-content: center;
 align-items: center;
-background-color: transparent;
-border: 0;
 cursor: pointer;
 
 &:hover .iconScrollVideosBack{
     height: 3em;
     width: 3em;
     color: #fff;
-}
-
-@media (max-width: 750px){
-    left: -20px;
 }
 `
 
@@ -39,7 +29,7 @@ function ScrollVideosBack(props) {
     function whileMouseEnter(){
         let viewWidth = window.innerWidth
 
-        if(viewWidth > 750){
+        if(viewWidth > 920){
             repeater = setInterval(slide, 1000)
         }
     }
@@ -47,7 +37,7 @@ function ScrollVideosBack(props) {
     function ifMouseLeave(){
         let viewWidth = window.innerWidth
 
-        if(viewWidth > 750){
+        if(viewWidth > 920){
             clearInterval(repeater)
         }
     }

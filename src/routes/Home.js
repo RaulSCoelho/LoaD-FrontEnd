@@ -1,20 +1,20 @@
 import React, { useEffect } from "react";
 import Navbar from "../components/Navbar";
-import { Flex } from "../components/Flex";
-import { ThemeProvider } from "styled-components";
-import { Box } from "../components/Box";
 import NextVideos from "../components/NextVideos";
-import CurrentVideo from "../components/CurrentVideo";
-import Themes from "../components/Themes"
 import VideosInfo from "../components/VideosInfo";
-import { Title } from "../components/Title";
 import ScrollVideosForward from "../components/ScrollVideosForward";
 import ScrollVideosBack from "../components/ScrollVideosBack";
+import CurrentVideo, { back, next } from "../components/CurrentVideo";
+import { Box } from "../components/Box";
+import { IoChevronForwardOutline as Forward } from "react-icons/io5"
+import { IoChevronBackOutline as Back } from "react-icons/io5"
+import { Title } from "../components/Title";
+import { PreviousVideoBtnSmallVW } from "../components/PreviousVideoBtnSmallVW";
+import { NextVideoBtnSmallVW } from "../components/NextVideoBtnSmallVW";
+import { Flex } from "../components/Flex";
 
 function Home() {
-
     useEffect(() => {
-        console.log(VideosInfo.videos[0][0])
         if (localStorage.getItem('currentVideo') == null) {
             const currentVideo = document.querySelector('.currentVideo')
             const currentVideoTitle = document.querySelector('.currentVideoTitle')
@@ -34,27 +34,35 @@ function Home() {
 
     return (<>
         <Navbar />
-        <ThemeProvider theme={Themes.box}>
-            <Box className="home">
-                <ThemeProvider theme={Themes.flexColumn}>
-                    <Flex>
-                        <CurrentVideo />
-                        <div className="nextVideos">
-                            {VideosInfo.videos.map((lessons, i) => (
-                                <Flex theme={Themes.flexColumn}>
-                                    <ScrollVideosBack row={i} />
-                                    <ThemeProvider theme={Themes.mediumTitle}>
-                                        <Title>{VideosInfo.titles[i][0]}</Title>
-                                    </ThemeProvider>
-                                    <NextVideos row={i} lessons={lessons} thumbnail={VideosInfo.thumbnails[i]} titles={VideosInfo.titles[i]} />
-                                    <ScrollVideosForward row={i} />
-                                </Flex>
-                            ))}
-                        </div>
-                    </Flex>
-                </ThemeProvider>
-            </Box>
-        </ThemeProvider>
+        <Flex width="100vw" direction="row" justify="space-between">
+            {/* Botão para voltar pro video anterior quando a tela fica menor */}
+            <PreviousVideoBtnSmallVW className="previousVideoSmallVW" onClick={back}>
+                <Back size="1.8em" color="white" />
+            </PreviousVideoBtnSmallVW>
+            {/* Botão para avançar para o próximo video quando a tela fica menor */}
+            <NextVideoBtnSmallVW className="nextVideoSmallVW" onClick={next}>
+                <Forward size="1.8em" color="white" />
+            </NextVideoBtnSmallVW>
+        </Flex>
+        <Box>
+            <Flex width="80vw" direction="column" justify="center">
+                <CurrentVideo />
+                <div className="nextVideos">
+                    {VideosInfo.videos.map((lessons, i) => (
+                        <Flex width="100%" direction="column" justify="center">
+                            <Title fontSize="24px" margin="15px 0px 15px 0px" viewWidth="6vw">
+                                {VideosInfo.titles[i][0]}
+                            </Title>
+                            <Flex width="100%" direction="row" justify="space-between">
+                                <ScrollVideosBack row={i} />
+                                <NextVideos row={i} lessons={lessons} thumbnail={VideosInfo.thumbnails[i]} titles={VideosInfo.titles[i]} />
+                                <ScrollVideosForward row={i} />
+                            </Flex>
+                        </Flex>
+                    ))}
+                </div>
+            </Flex>
+        </Box>
     </>)
 }
 

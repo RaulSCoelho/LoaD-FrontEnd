@@ -30,25 +30,6 @@ code {
 
 #root{
   background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.93),  rgba(0, 0, 0, 0.93));
-  position: absolute;
-  top: 0;
-  right: 0;
-  left: 0;
-}
-
-.currentVideoDiv{
-  width: 80%;
-}
-
-.currentVideo{
-  @media (max-width: 1245px){
-    width: calc(100vw - 180px);
-    height: calc(calc(100vw - 180px) * 0.5625);
-  }
-  @media (max-width: 750px){
-    min-width: 100vw;
-    min-height: calc(100vw * 0.5625);
-  }
 }
 
 .nextVideos{

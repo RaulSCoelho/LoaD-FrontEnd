@@ -1,15 +1,22 @@
-import styled from "styled-components"
+import styled from "@emotion/styled";
 
-export const Title = styled.h1`
-width: 100%;
-color: ${props => props.theme.color};
-margin: ${props => props.theme.margin};
-font-weight: lighter;
-text-align: left;
-font-size: min(${props => props.theme.maxSize}, max(calc(${props => props.theme.viewWidth} - ${props => props.theme.fontSize}), 16px));
+export const Title = styled("h1")(
+    {
+        width: "100%",
+        fontWeight: "lighter",
+        textAlign: "left",
+        color: "#fff",
 
-@media (max-width: 750px){
-    width: 100vw;
-    text-align: center;
-}
-`
+        "@media (max-width: 920px)": {
+            width: "100vw",
+            textAlign: "center"
+        }
+    },
+    (props) => {
+        return {
+            color: props.color,
+            margin: props.margin,
+            fontSize: `min(${props.fontSize}, max(calc(${props.viewWidth} - ${props.fontSize}), 16px))`
+        }
+    }
+)

@@ -4,47 +4,15 @@ import { IoMenuOutline as MenuIcon, IoClose as CloseIcon } from "react-icons/io5
 
 function Navbar() {
     const [sidebar, setSidebar] = useState(false)
-    const [scrollBack, setScrollBack] = useState(false)
-    const [scrollForward, setScrollForward] = useState(false)
-
-    function showSidebar() {
-        const scrollBackIcon = document.querySelectorAll('.iconScrollVideosBack')
-        const scrollForwardIcon = document.querySelectorAll('.iconScrollVideosForward')
-        const previousVideo = document.querySelector('.previousVideo')
-        const nextVideo = document.querySelector('.nextVideo')
-        let viewWidth = window.innerWidth
-        setScrollBack(!scrollBack)
-        setScrollForward(!scrollForward)
-        setSidebar(!sidebar)
-
-
-        for (let i = 0; i < scrollBackIcon.length; i++) {
-            if (scrollBack === false) {
-                scrollBackIcon[i].style = "display: none;"
-                if (viewWidth < 1245) {
-                    previousVideo.style = "display: none;"
-                    nextVideo.style = "display: none;"
-                    scrollForwardIcon[i].style = "display: none;"
-                }
-            } else {
-                scrollBackIcon[i].style = "display: unset;"
-                if (viewWidth < 1245) {
-                    previousVideo.style = "display: flex;"
-                    nextVideo.style = "display: flex;"
-                    scrollForwardIcon[i].style = "display: unset;"
-                }
-            }
-        }
-    }
-
+    
     return (<>
         <NavbarTop>
-            <div onClick={showSidebar} className='menuIcon'>
+            <div onClick={() => setSidebar(!sidebar)} className='menuIcon'>
                 <MenuIcon size="2em" color='white' />
             </div>
         </NavbarTop>
         <Menu>
-            <div onClick={showSidebar} className={sidebar ? 'menu-active' : 'menu'}>
+            <div onClick={() => setSidebar(!sidebar)} className={sidebar ? 'menu-active' : 'menu'}>
                 <CloseIcon className='closeMenu' size="2em" color='white' />
             </div>
         </Menu>
@@ -73,12 +41,12 @@ export const NavbarTop = styled.div`
             border: none;
         }
 
-        @media (max-width: 1245px){
+        @media (max-width: 1258px){
             border: 1px solid #757575;
         }
     }
 
-    @media (max-width: 1245px){
+    @media (max-width: 1258px){
         background-color: black;
     }
 `

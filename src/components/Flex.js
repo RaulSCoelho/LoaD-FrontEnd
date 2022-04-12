@@ -1,15 +1,21 @@
-import styled from "styled-components"
+import styled from "@emotion/styled";
 
-export const Flex = styled.div`
-    width: 100%;
-    display: flex;
-    flex-direction: ${props => props.theme.direction};
-    justify-content: ${props => props.theme.justify};
-    padding: ${props => props.theme.padding};
-    text-align: center;
-    align-items: center;
+export const Flex = styled("div")(
+    {
+        padding: "0",
+        display: "flex",
+        textAlign: "center",
+        alignItems: "center",
 
-    @media (max-width: 750px){
-        padding: 0;
+        "@media(max-width: 920px)": {
+            padding: "0"
+        },
+    },
+    (props) => {
+        return {
+            width: props.width,
+            flexDirection: props.direction,
+            justifyContent: props.justify
+        }
     }
-`
+)
