@@ -8,4 +8,8 @@ export const Flex = styled.div`
     padding: ${props => props.theme.padding};
     text-align: center;
     align-items: center;
+
+    @media (max-width: 750px){
+        padding: 0;
+    }
 `

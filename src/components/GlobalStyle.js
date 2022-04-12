@@ -45,6 +45,10 @@ code {
     width: calc(100vw - 180px);
     height: calc(calc(100vw - 180px) * 0.5625);
   }
+  @media (max-width: 750px){
+    min-width: 100vw;
+    min-height: calc(100vw * 0.5625);
+  }
 }
 
 .nextVideos{
@@ -100,5 +104,52 @@ h1.thumb{
 .scrollVideosBack{
   right: unset;
   left: 50px;
+}
+
+.currentVideoTitle, .currentVideoModule{
+  @media (max-width: 750px){
+    width: 100vw;
+    text-align: center;
+  }
+}
+
+.backBtnDiv {
+  @media (max-width: 1245px){
+    position: fixed;
+    top: 70px;
+    left: 0;
+    width: 50vw;
+    border-radius: 0;
+    border: 0;
+    background-color: black;
+    border-top: 1px solid #313131;
+    border-bottom: 1px solid #313131;
+    border-right: 1px solid #313131;
+
+    &:hover {
+      background-color: #313131;
+      border-bottom: 3px solid #313131;
+      height: 73px;
+    }
+  }
+}
+
+.nextBtnDiv{
+  @media (max-width: 1245px){
+    position: fixed;
+    top: 70px;
+    right: 0;
+    width: 50vw;
+    border-radius: 0;
+    border: 0;
+    background-color: black;
+    border-top: 1px solid #313131;
+    border-bottom: 1px solid #313131;
+
+    &:hover {
+      background-color: #313131;
+      height: 73px;
+    }
+  }
 }
 `

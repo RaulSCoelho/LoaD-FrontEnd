@@ -54,6 +54,14 @@ export const NavbarTop = styled.div`
             background-color: rgba(0, 0, 0, 0.7);
             border: none;
         }
+
+        @media (max-width: 1245px){
+            border: 1px solid #757575;
+        }
+    }
+
+    @media (max-width: 1245px){
+        background-color: black;
     }
 `
 export const Menu = styled.div`

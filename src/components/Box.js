@@ -12,4 +12,12 @@ export const Box = styled.div`
     padding: ${props => props.theme.padding};
     position: ${props => props.theme.position};
     right: ${props => props.theme.right};
+
+    @media (max-width: 1245px){
+        margin-top: 72px;
+    }
+
+    @media (max-width: 750px){
+        padding: 0;
+    }
 `

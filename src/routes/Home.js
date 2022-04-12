@@ -27,7 +27,7 @@ function Home() {
     return (<>
         <Navbar />
         <ThemeProvider theme={Themes.box}>
-            <Box>
+            <Box className="home">
                 <ThemeProvider theme={Themes.flexColumn}>
                     <Flex>
                         <CurrentVideo />

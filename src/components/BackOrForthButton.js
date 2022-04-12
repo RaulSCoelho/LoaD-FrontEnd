@@ -12,7 +12,7 @@ export const BackOrForthButton = styled.div`
     align-items: center;
     cursor: pointer;
 
-    @media (max-width: 1245px){
-        display: none;
+    @media (max-width: 750px){
+        margin: 0;
     }
 `
