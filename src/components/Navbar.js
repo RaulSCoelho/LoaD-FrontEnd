@@ -6,6 +6,7 @@ function Navbar() {
     const [sidebar, setSidebar] = useState(false)
     const [scrollBack, setScrollBack] = useState(false)
     const [scrollForward, setScrollForward] = useState(false)
+
     function showSidebar() {
         const scrollBackIcon = document.querySelectorAll('.iconScrollVideosBack')
         const scrollForwardIcon = document.querySelectorAll('.iconScrollVideosForward')
@@ -16,20 +17,20 @@ function Navbar() {
         setScrollForward(!scrollForward)
         setSidebar(!sidebar)
 
-        
+
         for (let i = 0; i < scrollBackIcon.length; i++) {
             if (scrollBack === false) {
                 scrollBackIcon[i].style = "display: none;"
-                previousVideo.style = "display: none;"
-                nextVideo.style = "display: none;"
-                if(viewWidth < 768){
+                if (viewWidth < 1245) {
+                    previousVideo.style = "display: none;"
+                    nextVideo.style = "display: none;"
                     scrollForwardIcon[i].style = "display: none;"
                 }
             } else {
                 scrollBackIcon[i].style = "display: unset;"
-                previousVideo.style = "display: flex;"
-                nextVideo.style = "display: flex;"
-                if(viewWidth < 768){
+                if (viewWidth < 1245) {
+                    previousVideo.style = "display: flex;"
+                    nextVideo.style = "display: flex;"
                     scrollForwardIcon[i].style = "display: unset;"
                 }
             }

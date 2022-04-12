@@ -12,15 +12,14 @@ export const NextVideoBtn = styled.div`
   align-items: center;
   cursor: pointer;
 
-@media (max-width: 1245px){
+  @media (max-width: 1245px){
     position: fixed;
     top: 70px;
     right: 0;
-    margin: 0;
     width: 50vw;
+    background-color: black;
     border-radius: 0;
     border: none;
-    background-color: black;
     border-top: 1px solid #313131;
     border-bottom: 1px solid #313131;
 
