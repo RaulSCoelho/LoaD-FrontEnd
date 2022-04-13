@@ -84,9 +84,9 @@ export function next() {
 
 function CurrentVideo() {
     return (
-        <Flex width="100%" direction="row" justify="space-between">
-            <Flex width="100%" direction="column" justify="center">
-                <Flex width="100%" direction="row" justify="center">
+        <Flex justify="space-between">
+            <Flex direction="column">
+                <Flex>
                     {/* Botão para voltar pro video anterior */}
                     <PreviousVideoBtn className="previousVideo" onClick={back}>
                         <Back size="1.8em" color="white" />

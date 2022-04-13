@@ -7,30 +7,30 @@ export default createGlobalStyle`
   box-sizing: border-box;
 }
 
-html {
-  overflow-x: hidden;
-  -ms-overflow-style: none;
-}
-
 body {
   background-color: rgb(18, 18, 18);
   margin: 0;
   padding: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-  }
-  
-  code {
-    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-  }
-  
-  ::-webkit-scrollbar{
-    display: none;
-  }
+  'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  monospace;
+}
+
+::-webkit-scrollbar{
+  display: none;
+}
+
+*::selection 
+{
+  background-color:rgba(0, 0, 0, 0.2);
+}
 
 #root{
   background-image: linear-gradient(rgb(173, 173, 173), rgb(18, 18, 18),  rgb(18, 18, 18));
@@ -47,11 +47,6 @@ body {
   }
 }
 
-.nextVideosRow{
-  transition: 200ms;
-  overflow-x: scroll;
-}
-
 .thumbs:hover .thumb {
   max-width: unset;
   width: 400px;
@@ -59,13 +54,8 @@ body {
 
 .thumb{
   width: 282px;
-  cursor: pointer;
   padding: 0px 20px 0px 0px;
+  cursor: pointer;
   transition: 350ms;
-}
-
-h1.thumb{
-  max-width: 282px;
-  height: 27.3px;
 }
 `

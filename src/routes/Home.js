@@ -34,7 +34,7 @@ function Home() {
 
     return (<>
         <Navbar />
-        <Flex width="100vw" direction="row" justify="space-between">
+        <Flex width="100vw" justify="space-between">
             {/* Botão para voltar pro video anterior quando a tela fica menor */}
             <PreviousVideoBtnSmallVW className="previousVideoSmallVW" onClick={back}>
                 <Back size="1.8em" color="white" />
@@ -45,15 +45,15 @@ function Home() {
             </NextVideoBtnSmallVW>
         </Flex>
         <Box>
-            <Flex width="80vw" direction="column" justify="center" margin="0px 0px 70px 0px">
+            <Flex width="80vw" direction="column" margin="0px 0px 70px 0px">
                 <CurrentVideo />
                 <div className="nextVideos">
                     {VideosInfo.videos.map((lessons, i) => (
-                        <Flex width="100%" direction="column" justify="center">
+                        <Flex direction="column">
                             <Title fontSize="24px" margin="15px 0px 15px 0px" viewWidth="6vw">
                                 {VideosInfo.titles[i][0]}
                             </Title>
-                            <Flex width="100%" direction="row" justify="space-between">
+                            <Flex justify="space-between">
                                 <ScrollVideosBack module={i} />
                                 <NextVideos module={i} lessons={lessons} thumbnail={VideosInfo.thumbnails[i]} titles={VideosInfo.titles[i]} />
                                 <ScrollVideosForward module={i} />

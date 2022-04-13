@@ -27,11 +27,11 @@ function NextVideos(props) {
     }
 
     return (
-        <Flex width="100%" direction="row" justify="space-between" id={`nextVideosRow${props.module}`} className="nextVideosRow">
+        <Flex id={`nextVideosRow${props.module}`} transition="200ms" justify="space-between" overflow="scroll">
             {props.lessons.map((link, i) =>
                 <div className="thumbs">
                     <img className="thumb" onClick={() => changeUrl(link, i)} src={props.thumbnail[i]} alt={`Aula ${i}`} />
-                    <Title className="thumb" fontSize="16px" textAlign="left !important" color="#757575" margin="15px 0px 10px 0px" viewWidth="32px">
+                    <Title className="thumb" height="27.3px" maxWidth="282px" fontSize="16px" textAlign="left !important" color="#757575" margin="15px 0px 10px 0px" viewWidth="32px">
                         {props.titles[i + 1]}
                     </Title>
                 </div>
