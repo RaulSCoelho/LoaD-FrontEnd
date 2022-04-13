@@ -9,7 +9,7 @@ export const Flex = styled("div")(
 
         "@media(max-width: 920px)": {
             padding: "0"
-        },
+        }
     },
     (props) => {
         return {

@@ -16,6 +16,7 @@ export const Title = styled("h1")(
         return {
             color: props.color,
             margin: props.margin,
+            textAlign: props.textAlign,
             fontSize: `min(${props.fontSize}, max(calc(${props.viewWidth} - ${props.fontSize}), 16px))`
         }
     }

@@ -37,6 +37,10 @@ code {
   padding-top: 30px;
   width: 90%;
   overflow: hidden;
+
+  @media (max-width: 920px){
+    width: 100vw;
+  }
 }
 
 .nextVideosRow{
