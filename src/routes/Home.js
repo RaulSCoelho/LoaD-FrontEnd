@@ -45,7 +45,7 @@ function Home() {
             </NextVideoBtnSmallVW>
         </Flex>
         <Box>
-            <Flex width="80vw" direction="column" justify="center">
+            <Flex width="80vw" direction="column" justify="center" margin="0px 0px 70px 0px">
                 <CurrentVideo />
                 <div className="nextVideos">
                     {VideosInfo.videos.map((lessons, i) => (

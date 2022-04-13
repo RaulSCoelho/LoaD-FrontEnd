@@ -15,7 +15,8 @@ export const Flex = styled("div")(
         return {
             width: props.width,
             flexDirection: props.direction,
-            justifyContent: props.justify
+            justifyContent: props.justify,
+            margin: props.margin
         }
     }
 )
