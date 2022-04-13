@@ -10,6 +10,10 @@ justify-content: center;
 align-items: center;
 cursor: pointer;
 
+.iconScrollVideosBack{
+    margin-bottom: 52px;
+}
+
 &:hover .iconScrollVideosBack{
     height: 3em;
     width: 3em;
@@ -19,7 +23,7 @@ cursor: pointer;
 
 function ScrollVideosBack(props) {
     function slide() {
-        const videoDiv = document.querySelector(`#nextVideosRow${props.row}`)
+        const videoDiv = document.querySelector(`#nextVideosRow${props.module}`)
         videoDiv.style = "scroll-behavior: smooth;"
         videoDiv.scrollLeft -= 282
     }

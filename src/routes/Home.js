@@ -54,9 +54,9 @@ function Home() {
                                 {VideosInfo.titles[i][0]}
                             </Title>
                             <Flex width="100%" direction="row" justify="space-between">
-                                <ScrollVideosBack row={i} />
-                                <NextVideos row={i} lessons={lessons} thumbnail={VideosInfo.thumbnails[i]} titles={VideosInfo.titles[i]} />
-                                <ScrollVideosForward row={i} />
+                                <ScrollVideosBack module={i} />
+                                <NextVideos module={i} lessons={lessons} thumbnail={VideosInfo.thumbnails[i]} titles={VideosInfo.titles[i]} />
+                                <ScrollVideosForward module={i} />
                             </Flex>
                         </Flex>
                     ))}
