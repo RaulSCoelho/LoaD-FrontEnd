@@ -5,7 +5,6 @@ export default createGlobalStyle`
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  scrollbar-width: none;
 }
 
 html {
@@ -20,14 +19,18 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
-}
+  }
+  
+  ::-webkit-scrollbar{
+    display: none;
+  }
 
 #root{
   background-image: linear-gradient(rgb(173, 173, 173), rgb(18, 18, 18),  rgb(18, 18, 18));
@@ -36,7 +39,7 @@ code {
 .nextVideos{
   border-top: 1px solid #444;
   padding-top: 30px;
-  width: 90%;
+  width: 100%;
   overflow: hidden;
 
   @media (max-width: 920px){
