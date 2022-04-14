@@ -23,8 +23,18 @@ code {
   monospace;
 }
 
-::-webkit-scrollbar{
-  display: none;
+*::-webkit-scrollbar {
+  width: 13px;
+}
+
+*::-webkit-scrollbar-thumb{
+  background: white;
+  border-radius: 10px;
+}
+
+*::-webkit-scrollbar-track{
+  background: transparent;
+  border-radius: 10px;
 }
 
 *::selection 
