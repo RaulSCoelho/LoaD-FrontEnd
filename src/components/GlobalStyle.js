@@ -30,11 +30,7 @@ code {
 *::-webkit-scrollbar-thumb{
   background: white;
   border-radius: 10px;
-}
-
-*::-webkit-scrollbar-track{
-  background: transparent;
-  border-radius: 10px;
+  border: 3px solid rgb(18, 18, 18);
 }
 
 *::selection 
