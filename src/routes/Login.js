@@ -1,8 +1,9 @@
 import React from "react";
+import Title from "../components/Title"
 
 function Login() {
     return (
-        <h1>Hello</h1>
+        <Title>Login Page</Title>
     )
 }
 
