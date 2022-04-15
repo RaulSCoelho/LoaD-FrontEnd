@@ -1,17 +1,16 @@
 import React, { useEffect } from "react";
-import Navbar from "../components/Navbar";
+import { IoChevronForwardOutline as Forward } from "react-icons/io5"
+import { IoChevronBackOutline as Back } from "react-icons/io5"
 import NextVideos from "../components/NextVideos";
 import VideosInfo from "../components/VideosInfo";
 import ScrollVideosForward from "../components/ScrollVideosForward";
 import ScrollVideosBack from "../components/ScrollVideosBack";
 import CurrentVideo, { back, next } from "../components/CurrentVideo";
+import { Flex } from "../components/Flex";
 import { Box } from "../components/Box";
-import { IoChevronForwardOutline as Forward } from "react-icons/io5"
-import { IoChevronBackOutline as Back } from "react-icons/io5"
 import { Title } from "../components/Title";
 import { PreviousVideoBtnSmallVW } from "../components/PreviousVideoBtnSmallVW";
 import { NextVideoBtnSmallVW } from "../components/NextVideoBtnSmallVW";
-import { Flex } from "../components/Flex";
 
 function Home() {
     useEffect(() => {
@@ -33,7 +32,6 @@ function Home() {
     })
 
     return (<>
-        <Navbar />
         <Flex width="100vw" justify="space-between">
             {/* Botão para voltar pro video anterior quando a tela fica menor */}
             <PreviousVideoBtnSmallVW className="previousVideoSmallVW" onClick={back}>

@@ -1,10 +1,10 @@
-import Video from "../components/Video";
-import VideosInfo from "../components/VideosInfo";
 import React from "react";
 import { IoChevronForwardOutline as Forward } from "react-icons/io5"
 import { IoChevronBackOutline as Back } from "react-icons/io5"
-import { Flex } from "./Flex";
+import Video from "../components/Video";
+import VideosInfo from "../components/VideosInfo";
 import { Title } from "../components/Title";
+import { Flex } from "./Flex";
 import { PreviousVideoBtn } from "./PreviousVideoBtn";
 import { NextVideoBtn } from "./NextVideoBtn";
 

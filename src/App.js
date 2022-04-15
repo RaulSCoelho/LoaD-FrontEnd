@@ -1,11 +1,13 @@
 import React from "react";
-import GlobalStyle from "./components/GlobalStyle";
+import { Routes, Route } from "react-router-dom";
 import Home from "./routes/Home";
 import Login from "./routes/Login";
-import { Routes, Route } from "react-router-dom";
+import GlobalStyle from "./components/GlobalStyle";
+import Navbar from "./components/Navbar";
 
 function App() {
   return (<>
+    <Navbar />
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/login" element={<Login />} />

@@ -4,7 +4,7 @@ import { IoMenuOutline as MenuIcon, IoClose as CloseIcon } from "react-icons/io5
 
 function Navbar() {
     const [sidebar, setSidebar] = useState(false)
-    
+
     return (<>
         <NavbarTop>
             <div onClick={() => setSidebar(!sidebar)} className='menuIcon'>
@@ -12,8 +12,8 @@ function Navbar() {
             </div>
         </NavbarTop>
         <Menu>
-            <div onClick={() => setSidebar(!sidebar)} className={sidebar ? 'menu-active' : 'menu'}>
-                <CloseIcon className='closeMenu' size="2em" color='white' />
+            <div className={sidebar ? 'menu-active' : 'menu'}>
+                <CloseIcon onClick={() => setSidebar(!sidebar)} className='closeMenu' size="2em" color='white' />
             </div>
         </Menu>
     </>)
