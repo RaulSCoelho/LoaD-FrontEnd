@@ -9,7 +9,6 @@ import allReducers from './reducers'
 const root = createRoot(document.getElementById('root'));
 const store = createStore(allReducers)
 
-
 root.render(
     <BrowserRouter>
         <Provider store={store}>
