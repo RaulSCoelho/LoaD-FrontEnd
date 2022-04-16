@@ -1,7 +1,7 @@
 import axios from "axios"
 
 const api = axios.create({
-    baseURL: "https://lifeofadream.herokuapp.com",
+    baseURL: process.env.BASE_URL,
     withCredentials: true
 })
 
