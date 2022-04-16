@@ -1,9 +1,15 @@
 import React from "react";
-import { Title } from "../components/Title"
+import { Box } from "../components/Box";
+import { Flex } from "../components/Flex";
+import LoginForm from "../components/LoginForm";
 
 function Login() {
     return (
-        <Title>Login Page</Title>
+        <Box minHeight="100vh">
+            <Flex justify="center">
+                <LoginForm />
+            </Flex>
+        </Box>
     )
 }
 

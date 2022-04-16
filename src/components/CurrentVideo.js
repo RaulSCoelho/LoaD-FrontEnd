@@ -99,11 +99,11 @@ function CurrentVideo() {
                     </NextVideoBtn>
                 </Flex>
                 {/* Módulo da aula */}
-                <Title className="currentVideoModule" fontSize="16px" margin="15px 0px 0px 0px" viewWidth="32px">
+                <Title className="currentVideoModule" textAlign="left" fontSize="16px" margin="15px 0px 0px 0px" viewWidth="32px">
                     {`${localStorage.getItem('currentVideoModule')}`}
                 </Title>
                 {/* Título da aula */}
-                <Title className="currentVideoTitle" fontSize="48px" viewWidth="10vw">
+                <Title className="currentVideoTitle" textAlign="left" fontSize="48px" viewWidth="10vw">
                     {`${localStorage.getItem('currentVideoTitle')}`}
                 </Title>
             </Flex>

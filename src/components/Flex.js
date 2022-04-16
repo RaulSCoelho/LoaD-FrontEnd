@@ -20,12 +20,17 @@ export const Flex = styled("div")(
     },
     (props) => {
         return {
+            backgroundColor: props.bgColor,
+            borderRadius: props.borderRadius,
             width: props.width,
+            height: props.height,
             margin: props.margin,
+            padding: props.padding,
             flexDirection: props.direction,
             justifyContent: props.justify,
             overflow: props.overflow,
             transition: props.transition,
+            boxShadow: props.boxShadow,
         }
     }
 )

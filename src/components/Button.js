@@ -1,28 +1,20 @@
 import styled from "@emotion/styled";
 
-export const Box = styled("div")(
+export const Button = styled("button")(
     {
-        width: "100%",
-        height: "100%",
-        display: "flex",
+        backgroundColor: "white",
+        border: "1px solid black",
+        borderRadius: "10px",
+        fontWeight: "bold",
         justifyContent: "center",
         alignItems: "center",
-
-        "@media (max-width: 1258px)": {
-            marginTop: "72px"
-        },
-
-        "@media (max-width: 920px)": {
-            padding: "0",
-            marginTop: "0px"
-        }
+        padding: "5px",
     },
     (props) => {
         return {
             backgroundColor: props.bgColor,
             width: props.width,
             height: props.height,
-            minHeight: props.minHeight,
             padding: props.padding,
             margin: props.margin,
         }

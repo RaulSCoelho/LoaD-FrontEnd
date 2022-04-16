@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useContext, useEffect } from "react";
 import { IoChevronForwardOutline as Forward } from "react-icons/io5"
 import { IoChevronBackOutline as Back } from "react-icons/io5"
 import NextVideos from "../components/NextVideos";
@@ -13,6 +13,7 @@ import { PreviousVideoBtnSmallVW } from "../components/PreviousVideoBtnSmallVW";
 import { NextVideoBtnSmallVW } from "../components/NextVideoBtnSmallVW";
 
 function Home() {
+
     useEffect(() => {
         if (localStorage.getItem('currentVideo') == null) {
             const currentVideo = document.querySelector('.currentVideo')
@@ -32,7 +33,7 @@ function Home() {
     })
 
     return (<>
-        <Flex width="100vw" justify="space-between">
+        <Flex width="100%" justify="center">
             {/* Botão para voltar pro video anterior quando a tela fica menor */}
             <PreviousVideoBtnSmallVW className="previousVideoSmallVW" onClick={back}>
                 <Back size="1.8em" color="white" />
@@ -48,7 +49,7 @@ function Home() {
                 <div className="nextVideos">
                     {VideosInfo.videos.map((lessons, i) => (
                         <Flex direction="column">
-                            <Title fontSize="24px" margin="15px 0px 15px 0px" viewWidth="6vw">
+                            <Title textAlign="left" fontSize="24px" margin="15px 0px 15px 0px" viewWidth="6vw">
                                 {VideosInfo.titles[i][0]}
                             </Title>
                             <Flex justify="space-between">

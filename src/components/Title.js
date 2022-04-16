@@ -4,11 +4,11 @@ export const Title = styled("h1")(
     {
         width: "100%",
         fontWeight: "lighter",
-        textAlign: "left",
+        textAlign: "center",
         color: "#fff",
 
         "@media (max-width: 920px)": {
-            width: "100vw",
+            width: "100%",
             textAlign: "center"
         }
     },
@@ -19,6 +19,7 @@ export const Title = styled("h1")(
             textAlign: props.textAlign,
             height: props.height,
             maxWidth: props.maxWidth,
+            fontWeight: props.fontWeight,
             fontSize: `min(${props.fontSize}, max(calc(${props.viewWidth} - ${props.fontSize}), 16px))`
         }
     }

@@ -49,7 +49,7 @@ code {
   overflow: hidden;
 
   @media (max-width: 920px){
-    width: 100vw;
+    width: 95vw;
   }
 }
 

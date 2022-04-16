@@ -9,8 +9,9 @@ export const VideoDiv = styled("div")(
                 height: "calc(calc(100vw - 180px) * 0.5625)",
             },
             "@media(max-width: 920px)": {
-                minWidth: "100vw",
-                minHeight: "calc(100vw * 0.5625)",
+                marginTop: "5px",
+                minWidth: "95vw",
+                minHeight: "calc(95vw * 0.5625)",
             }
         },
     },
