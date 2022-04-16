@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from "react";
+import React, { useEffect } from "react";
 import { IoChevronForwardOutline as Forward } from "react-icons/io5"
 import { IoChevronBackOutline as Back } from "react-icons/io5"
 import NextVideos from "../components/NextVideos";

@@ -9,6 +9,10 @@ export const Button = styled("button")(
         justifyContent: "center",
         alignItems: "center",
         padding: "5px",
+
+        "&:hover": {
+            backgroundColor: "rgb(207, 207, 207)"
+        }
     },
     (props) => {
         return {
