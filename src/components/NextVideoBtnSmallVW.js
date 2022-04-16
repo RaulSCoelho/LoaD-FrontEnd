@@ -9,7 +9,6 @@ export const NextVideoBtnSmallVW = styled.div`
     align-items: center;
     border-top: 1px solid #313131;
     border-bottom: 1px solid #313131;
-    border-right: 1px solid #313131;
     cursor: pointer;
 
     &:hover {
