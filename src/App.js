@@ -23,16 +23,19 @@ function App() {
   const [isNotLogged, setIsNotLogged] = useState(false)
 
   useEffect(() => {
-    api.get('/classes').then(res => {
-      if (res.data.user.user.admin) {
-        dispatch(Admin())
-      }
-      dispatch(Logged())
-      setClasses(res.data.modules)
-      setUser(res.data.user.user)
-    }).catch(err => {
-      setIsNotLogged(true)
-    })
+    const fetchData = async () => {
+      const data = await api.get('/classes').then(res => {
+        if (res.data.user.user.admin) {
+          dispatch(Admin())
+        }
+        dispatch(Logged())
+        setClasses(res.data.modules)
+        setUser(res.data.user.user)
+      }).catch(err => {
+        setIsNotLogged(true)
+      })
+    }
+    fetchData()
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
