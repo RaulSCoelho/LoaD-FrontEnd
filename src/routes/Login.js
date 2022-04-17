@@ -1,13 +1,41 @@
 import React from "react";
+import api from '../api'
+import Input from "../components/Input";
 import { Box } from "../components/Box";
 import { Flex } from "../components/Flex";
-import LoginForm from "../components/LoginForm";
+import { Button } from "../components/Button";
 
 function Login() {
+    const [username, setUsername] = useState("")
+    const [password, setPassword] = useState("")
+
+
+    async function login() {
+        await api.post('/user/login', {
+            username: username,
+            password: password
+        }).then(res => {
+            Redirect('/')
+        }).catch(err => {
+            const loginError = document.querySelector('#loginError')
+            loginError.style = "color: red;"
+            loginError.innerHTML = err.response.data
+        })
+    }
+
     return (
         <Box minHeight="100vh">
             <Flex justify="center">
-                <LoginForm />
+                <Flex
+                    justify="space-evenly" direction="column" width="300px"
+                    height="200px" borderRadius="20px" bgColor="rgb(207, 207, 207)"
+                    boxShadow="0px 0px 16px rgba(0, 0, 0, 0.6)"
+                >
+                    <div id="loginError"></div>
+                    <Input onChange={(e) => setUsername(e.target.value)} type="text" id="username" placeholder="username" />
+                    <Input onChange={(e) => setPassword(e.target.value)} type="password" id="password" placeholder="password" />
+                    <Button onClick={login} padding="0 10px 0 10px">Login</Button>
+                </Flex>
             </Flex>
         </Box>
     )
