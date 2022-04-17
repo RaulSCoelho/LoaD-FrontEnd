@@ -12,23 +12,24 @@ function Login() {
 
 
     async function login() {
-        const url = "https://lifeofadream.herokuapp.com/user/login"
         const options = {
-            method: "POST",
+            method: 'POST',
             headers: {
                 Accept: "application/json",
                 "Content-Type": "application/json",
             },
-            body: {
+            body: JSON.stringify({
                 username: username,
                 password: password
-            },
-            mode: "cors",
-            redirect: "follow",
-            referrerPolicy: "origin",
-            credentials: "include",
+            }),
         }
-        fetch(url, options)
+        fetch('https://lifeofadream.herokuapp.com/user/login', options).then(res => {
+            //Redirect('/')
+        }).catch(err => {
+            const loginError = document.querySelector('#loginError')
+            loginError.style = "color: red;"
+            loginError.innerHTML = err.response.data
+        })
         // await api.post('/user/login', {
         //     username: username,
         //     password: password
