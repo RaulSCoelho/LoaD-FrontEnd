@@ -4,7 +4,7 @@ import { IoMenuOutline as MenuIcon, IoClose as CloseIcon } from "react-icons/io5
 import { FiLogOut as LogOut } from "react-icons/fi"
 import api from '../api';
 import { Flex } from './Flex';
-import { Redirect } from './Redirect';
+//import { Redirect } from './Redirect';
 
 function Navbar() {
     const [sidebar, setSidebar] = useState(false)

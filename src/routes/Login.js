@@ -4,7 +4,7 @@ import { Box } from "../components/Box";
 import { Flex } from "../components/Flex";
 import { Input } from "../components/Input";
 import { Button } from "../components/Button";
-import { Redirect } from "../components/Redirect";
+//import { Redirect } from "../components/Redirect";
 
 function Login() {
     const [username, setUsername] = useState("")
@@ -12,7 +12,7 @@ function Login() {
 
 
     async function login() {
-        await api.post('/user/login', {
+        await api.get('/user/login', {
             username: username,
             password: password
         }).then(res => {
