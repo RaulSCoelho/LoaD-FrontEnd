@@ -11,9 +11,8 @@ function Login() {
     const [password, setPassword] = useState("")
 
 
-    async function login(event) {
-        event.preventDefault()
-        await api.post('/user/login', {
+    async function login() {
+        await api.post('/user/login/', {
             username: username,
             password: password
         }).then(res => {
