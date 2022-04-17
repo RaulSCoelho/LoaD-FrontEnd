@@ -24,7 +24,7 @@ function App() {
 
   useEffect(() => {
     const fetchData = async () => {
-      const data = await api.get('/classes').then(res => {
+      await api.get('/classes').then(res => {
         if (res.data.user.user.admin) {
           dispatch(Admin())
         }

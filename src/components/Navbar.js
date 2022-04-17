@@ -11,7 +11,7 @@ function Navbar() {
 
     async function logout() {
         await api.get('/user/logout').then(res => {
-            console.log(res)
+            console.log(res.data)
             //Redirect('/')
         }).catch(err => {
             console.log(err.response.data)
