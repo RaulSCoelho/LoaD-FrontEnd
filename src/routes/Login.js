@@ -1,8 +1,8 @@
 import React from "react";
 import api from '../api'
-import Input from "../components/Input";
 import { Box } from "../components/Box";
 import { Flex } from "../components/Flex";
+import { Input } from "../components/Input";
 import { Button } from "../components/Button";
 
 function Login() {
