@@ -11,7 +11,7 @@ function Navbar() {
 
     function logout() {
         api.get('/user/logout')
-        Redirect('/')
+        //Redirect('/')
     }
 
     return (<>
