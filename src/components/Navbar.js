@@ -10,7 +10,7 @@ function Navbar() {
     const [sidebar, setSidebar] = useState(false)
 
     async function logout() {
-        await api.get('/user/logout').then(res => {
+        await api.get('user/logout').then(res => {
             console.log(res.data)
             //Redirect('/')
         }).catch(err => {

@@ -24,14 +24,14 @@ function App() {
 
   useEffect(() => {
     const fetchData = async () => {
-      await api.get('/classes').then(res => {
+      await api.get('classes').then(res => {
         if (res.data.jwt.user.admin) {
           dispatch(Admin())
         }
         dispatch(Logged())
         setClasses(res.data.modules)
 
-        api.get(`/user/${res.data.jwt.user.username}`).then(res => {
+        api.get(`user/${res.data.jwt.user.username}`).then(res => {
           setUser(res.data)
         })
 

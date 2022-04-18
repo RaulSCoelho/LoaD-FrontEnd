@@ -12,7 +12,7 @@ function Login() {
 
 
     async function login() {
-        await api.post('/user/login', {
+        await api.post('user/login', {
             username: username,
             password: password
         }).then(res => {
