@@ -9,14 +9,15 @@ export const Flex = styled("div")(
         alignItems: "center",
         flexDirection: "row",
         justifyContent: "center",
+        scrollbarWidth: "none",
+
+        "::-webkit-scrollbar": {
+            display: "none"
+        },
 
         "@media(max-width: 920px)": {
             padding: "0"
         },
-
-        "::-webkit-scrollbar": {
-            display: "none"
-        }
     },
     (props) => {
         return {

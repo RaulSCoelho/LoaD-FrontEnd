@@ -1,29 +1,37 @@
-import React from "react";
+import React, { useContext } from "react";
+import api from "../api";
+import { ClassesContext } from "../context/ClassesContext";
+import { UserContext } from "../context/UserContext";
 import { Flex } from "./Flex";
 import { Title } from "./Title";
 
 function NextVideos(props) {
+    const { user, setUser } = useContext(UserContext)
+    const { classes } = useContext(ClassesContext)
 
     function changeUrl(link, i) {
         const currentVideo = document.querySelector('.currentVideo')
         const currentVideoTitle = document.querySelector('.currentVideoTitle')
         const currentVideoModule = document.querySelector('.currentVideoModule')
 
-        const videoTitle = props.titles[i + 1]
-        const videoModule = props.titles[0]
-        const videoModuleIndex = props.module
+        let newCurrentClass = classes[props.module].videos.indexOf(link)
+        let newCurrentModule = props.module
+
+        user.currentClass = newCurrentClass
+        user.currentModule = newCurrentModule
 
         currentVideo.src = link
-        currentVideoTitle.innerHTML = videoTitle
-        currentVideoModule.innerHTML = videoModule
+        currentVideoTitle.innerHTML = props.titles[i + 1]
+        currentVideoModule.innerHTML = props.titles[0]
 
-        localStorage.setItem('currentVideo', link)
-        localStorage.setItem('currentVideoIndex', i)
-        localStorage.setItem('currentVideoTitle', videoTitle)
-        localStorage.setItem('currentVideoModule', videoModule)
-        localStorage.setItem('currentVideoModuleIndex', videoModuleIndex)
-
-        currentVideo.src = link
+        api.patch(`/user/update/${user.username}`, {
+            currentClass: newCurrentClass,
+            currentModule: newCurrentModule
+        }).then(res => {
+            setUser(user)
+        }).catch(err => {
+            console.log(err.response.data)
+        })
     }
 
     return (

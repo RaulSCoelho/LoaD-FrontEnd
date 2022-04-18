@@ -1,8 +1,7 @@
-import React, { useEffect } from "react";
+import React, { useContext } from "react";
 import { IoChevronForwardOutline as Forward } from "react-icons/io5"
 import { IoChevronBackOutline as Back } from "react-icons/io5"
 import NextVideos from "../components/NextVideos";
-import VideosInfo from "../components/VideosInfo";
 import ScrollVideosForward from "../components/ScrollVideosForward";
 import ScrollVideosBack from "../components/ScrollVideosBack";
 import CurrentVideo, { back, next } from "../components/CurrentVideo";
@@ -11,35 +10,21 @@ import { Box } from "../components/Box";
 import { Title } from "../components/Title";
 import { PreviousVideoBtnSmallVW } from "../components/PreviousVideoBtnSmallVW";
 import { NextVideoBtnSmallVW } from "../components/NextVideoBtnSmallVW";
+import { ClassesContext } from "../context/ClassesContext";
+import { UserContext } from "../context/UserContext";
 
 function Home() {
-
-    useEffect(() => {
-        if (localStorage.getItem('currentVideo') == null) {
-            const currentVideo = document.querySelector('.currentVideo')
-            const currentVideoTitle = document.querySelector('.currentVideoTitle')
-            const currentVideoModule = document.querySelector('.currentVideoModule')
-
-            currentVideo.src = VideosInfo.videos[0][0]
-            currentVideoTitle.innerHTML = VideosInfo.titles[0][1]
-            currentVideoModule.innerHTML = VideosInfo.titles[0][0]
-
-            localStorage.setItem('currentVideo', VideosInfo.videos[0][0])
-            localStorage.setItem('currentVideoIndex', 0)
-            localStorage.setItem('currentVideoTitle', VideosInfo.titles[0][1])
-            localStorage.setItem('currentVideoModule', VideosInfo.titles[0][0])
-            localStorage.setItem('currentVideoModuleIndex', 0)
-        }
-    })
+    const { user, setUser } = useContext(UserContext)
+    const { classes } = useContext(ClassesContext)
 
     return (<>
         <Flex width="100%" justify="center">
             {/* Botão para voltar pro video anterior quando a tela fica menor */}
-            <PreviousVideoBtnSmallVW className="previousVideoSmallVW" onClick={back}>
+            <PreviousVideoBtnSmallVW className="previousVideoSmallVW" onClick={() => back(user, setUser, classes)}>
                 <Back size="1.8em" color="white" />
             </PreviousVideoBtnSmallVW>
             {/* Botão para avançar para o próximo video quando a tela fica menor */}
-            <NextVideoBtnSmallVW className="nextVideoSmallVW" onClick={next}>
+            <NextVideoBtnSmallVW className="nextVideoSmallVW" onClick={() => next(user, setUser, classes)}>
                 <Forward size="1.8em" color="white" />
             </NextVideoBtnSmallVW>
         </Flex>
@@ -47,14 +32,14 @@ function Home() {
             <Flex width="80vw" direction="column" margin="0px 0px 70px 0px">
                 <CurrentVideo />
                 <div className="nextVideos">
-                    {VideosInfo.videos.map((lessons, i) => (
+                    {classes.map((module, i) => (
                         <Flex direction="column">
                             <Title textAlign="left" fontSize="24px" margin="15px 0px 15px 0px" viewWidth="6vw">
-                                {VideosInfo.titles[i][0]}
+                                {module.titles[0]}
                             </Title>
                             <Flex justify="space-between">
                                 <ScrollVideosBack module={i} />
-                                <NextVideos module={i} lessons={lessons} thumbnail={VideosInfo.thumbnails[i]} titles={VideosInfo.titles[i]} />
+                                <NextVideos module={i} lessons={module.videos} thumbnail={module.thumbnails} titles={module.titles} />
                                 <ScrollVideosForward module={i} />
                             </Flex>
                         </Flex>

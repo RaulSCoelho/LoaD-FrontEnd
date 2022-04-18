@@ -25,12 +25,16 @@ function App() {
   useEffect(() => {
     const fetchData = async () => {
       await api.get('/classes').then(res => {
-        if (res.data.user.user.admin) {
+        if (res.data.jwt.user.admin) {
           dispatch(Admin())
         }
         dispatch(Logged())
         setClasses(res.data.modules)
-        setUser(res.data.user.user)
+
+        api.get(`/user/${res.data.jwt.user.username}`).then(res => {
+          setUser(res.data)
+        })
+
       }).catch(err => {
         setIsNotLogged(true)
       })
