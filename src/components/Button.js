@@ -4,11 +4,15 @@ export const Button = styled("button")(
     {
         backgroundColor: "white",
         border: "1px solid black",
-        borderRadius: "10px",
-        fontWeight: "bold",
-        justifyContent: "center",
+        color: "black",
+        borderRadius: "6px",
+        fontSize: "15pt",
+        display: "flex",
+        textAlign: "center",
         alignItems: "center",
+        justifyContent: "center",
         padding: "5px",
+        cursor: "pointer",
 
         "&:hover": {
             backgroundColor: "rgb(207, 207, 207)"

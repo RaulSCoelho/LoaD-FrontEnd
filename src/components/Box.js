@@ -25,6 +25,9 @@ export const Box = styled("div")(
             minHeight: props.minHeight,
             padding: props.padding,
             margin: props.margin,
+            "@media (max-width: 1258px)": {
+                marginTop: props.mediaMarginTop
+            },
         }
     }
 )

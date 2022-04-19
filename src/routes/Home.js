@@ -7,7 +7,7 @@ import ScrollVideosBack from "../components/ScrollVideosBack";
 import CurrentVideo, { back, next } from "../components/CurrentVideo";
 import { Flex } from "../components/Flex";
 import { Box } from "../components/Box";
-import { Title } from "../components/Title";
+import { ResponsiveTitle } from "../components/ResponsiveTitle";
 import { PreviousVideoBtnSmallVW } from "../components/PreviousVideoBtnSmallVW";
 import { NextVideoBtnSmallVW } from "../components/NextVideoBtnSmallVW";
 import { ClassesContext } from "../context/ClassesContext";
@@ -28,15 +28,15 @@ function Home() {
                 <Forward size="1.8em" color="white" />
             </NextVideoBtnSmallVW>
         </Flex>
-        <Box>
+        <Box className="home">
             <Flex width="80vw" direction="column" margin="0px 0px 70px 0px">
                 <CurrentVideo />
                 <div className="nextVideos">
                     {classes.map((module, i) => (
                         <Flex direction="column">
-                            <Title textAlign="left" fontSize="24px" margin="15px 0px 15px 0px" viewWidth="6vw">
+                            <ResponsiveTitle textAlign="left" fontSize="24px" margin="15px 0px 15px 0px" viewWidth="6vw">
                                 {module.titles[0]}
-                            </Title>
+                            </ResponsiveTitle>
                             <Flex justify="space-between">
                                 <ScrollVideosBack module={i} />
                                 <NextVideos module={i} lessons={module.videos} thumbnail={module.thumbnails} titles={module.titles} />

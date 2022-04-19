@@ -46,7 +46,7 @@ function App() {
   return (
     <ClassesContext.Provider value={value2}>
       <UserContext.Provider value={value1}>
-        {isLogged ? <Navbar /> : <></>}
+        {isLogged ? <Navbar /> : ""}
         <Routes>
           <Route path="/" element={isLogged ? <Home /> : isNotLogged && <Login />} />
         </Routes>

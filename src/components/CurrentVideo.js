@@ -3,7 +3,7 @@ import { IoChevronForwardOutline as Forward } from "react-icons/io5"
 import { IoChevronBackOutline as Back } from "react-icons/io5"
 import api from "../api"
 import Video from "../components/Video";
-import { Title } from "../components/Title";
+import { ResponsiveTitle } from "./ResponsiveTitle";
 import { Flex } from "./Flex";
 import { PreviousVideoBtn } from "./PreviousVideoBtn";
 import { NextVideoBtn } from "./NextVideoBtn";
@@ -108,13 +108,13 @@ function CurrentVideo() {
                     </NextVideoBtn>
                 </Flex>
                 {/* Módulo da aula */}
-                <Title className="currentVideoModule" textAlign="left" fontSize="16px" margin="15px 0px 0px 0px" viewWidth="32px">
+                <ResponsiveTitle className="currentVideoModule" textAlign="left" fontSize="16px" margin="15px 0px 0px 0px" viewWidth="32px">
                     {moduleTitle}
-                </Title>
+                </ResponsiveTitle>
                 {/* Título da aula */}
-                <Title className="currentVideoTitle" textAlign="left" fontSize="48px" viewWidth="10vw">
+                <ResponsiveTitle className="currentVideoTitle" textAlign="left" fontSize="48px" viewWidth="10vw">
                     {videoTitle}
-                </Title>
+                </ResponsiveTitle>
             </Flex>
         </Flex>
     )

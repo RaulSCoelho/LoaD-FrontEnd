@@ -3,7 +3,7 @@ import api from "../api";
 import { ClassesContext } from "../context/ClassesContext";
 import { UserContext } from "../context/UserContext";
 import { Flex } from "./Flex";
-import { Title } from "./Title";
+import { ResponsiveTitle } from "./ResponsiveTitle";
 
 function NextVideos(props) {
     const { user, setUser } = useContext(UserContext)
@@ -39,9 +39,9 @@ function NextVideos(props) {
             {props.lessons.map((link, i) =>
                 <div className="thumbs">
                     <img className="thumb" onClick={() => changeUrl(link, i)} src={props.thumbnail[i]} alt={`Aula ${i}`} />
-                    <Title className="thumb" height="27.3px" maxWidth="282px" fontSize="16px" textAlign="left" color="#757575" margin="15px 0px 10px 0px" viewWidth="32px">
+                    <ResponsiveTitle className="thumb" height="27.3px" maxWidth="282px" fontSize="16px" textAlign="left" color="#757575" margin="15px 0px 10px 0px" viewWidth="32px">
                         {props.titles[i + 1]}
-                    </Title>
+                    </ResponsiveTitle>
                 </div>
             )}
         </Flex>

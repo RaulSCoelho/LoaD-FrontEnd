@@ -4,7 +4,8 @@ import { Box } from "../components/Box";
 import { Flex } from "../components/Flex";
 import { Input } from "../components/Input";
 import { Button } from "../components/Button";
-//import { Redirect } from "../components/Redirect";
+import { ResponsiveTitle } from "../components/ResponsiveTitle";
+import { Redirect } from "../components/Redirect";
 
 function Login() {
     const [username, setUsername] = useState("")
@@ -16,7 +17,7 @@ function Login() {
             username: username,
             password: password
         }).then(res => {
-            //Redirect('/')
+            Redirect('/')
         }).catch(err => {
             const loginError = document.querySelector('#loginError')
             loginError.style = "color: red;"
@@ -25,7 +26,7 @@ function Login() {
     }
 
     return (
-        <Box minHeight="100vh">
+        <Box className="login" minHeight="100vh" mediaMarginTop="0px">
             <Flex justify="center">
                 <Flex
                     justify="space-evenly" direction="column" width="300px"
@@ -33,9 +34,10 @@ function Login() {
                     boxShadow="0px 0px 16px rgba(0, 0, 0, 0.6)"
                 >
                     <div id="loginError"></div>
+                    <ResponsiveTitle color="black">Login</ResponsiveTitle>
                     <Input onChange={(e) => setUsername(e.target.value)} type="text" id="username" placeholder="username" />
                     <Input onChange={(e) => setPassword(e.target.value)} type="password" id="password" placeholder="password" />
-                    <Button onClick={login} padding="0 10px 0 10px">Login</Button>
+                    <Button onClick={login} padding="0px 10px 2px 10px" width="8rem" height="1.7rem">Entrar</Button>
                 </Flex>
             </Flex>
         </Box>
