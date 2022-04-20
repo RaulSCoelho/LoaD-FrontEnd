@@ -23,6 +23,7 @@ export const Flex = styled("div")(
         return {
             backgroundColor: props.bgColor,
             borderRadius: props.borderRadius,
+            display: props.display,
             width: props.width,
             height: props.height,
             margin: props.margin,

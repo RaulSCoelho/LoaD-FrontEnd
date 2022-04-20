@@ -1,6 +1,7 @@
 import React, { useEffect, useMemo, useState } from "react";
 import { Routes, Route } from "react-router-dom";
 import Home from "./routes/Home";
+import Profile from "./routes/Profile";
 import Login from "./routes/Login";
 import GlobalStyle from "./components/GlobalStyle";
 import Navbar from "./components/Navbar";
@@ -49,6 +50,7 @@ function App() {
         {isLogged ? <Navbar /> : ""}
         <Routes>
           <Route path="/" element={isLogged ? <Home /> : isNotLogged && <Login />} />
+          <Route path="/profile" element={isLogged ? <Profile /> : isNotLogged && <Login />} />
         </Routes>
         <GlobalStyle />
       </UserContext.Provider>

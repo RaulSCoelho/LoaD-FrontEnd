@@ -48,7 +48,7 @@ function Navbar() {
         <Configs>
             <DropUp className={dropUp ? 'dropUp-active' : 'dropUp'} color='rgb(28, 28, 28)' />
             <div className={configs ? 'configs-active' : 'configs'}>
-                <Flex className='configsOptions'>
+                <Flex className='configsOptions' onClick={() => Redirect('/profile')}>
                     <ResponsiveTitle textAlign="right" fontSize="20px" margin="0 10px 2px 0" viewWidth="10vw">Profile</ResponsiveTitle>
                     <CgProfile color="white" size="2em" />
                 </Flex>

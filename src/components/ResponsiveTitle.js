@@ -14,6 +14,7 @@ export const ResponsiveTitle = styled("h1")(
     },
     (props) => {
         return {
+            width: props.width,
             color: props.color,
             margin: props.margin,
             textAlign: props.textAlign,
