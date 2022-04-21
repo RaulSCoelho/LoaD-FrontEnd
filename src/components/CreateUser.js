@@ -89,10 +89,10 @@ export function Radio(props) {
         <Flex direction="column">
             <Border width="400px" margin="10px 0 10px 0" />
             <Flex>
-                <ResponsiveTitle width="50px" textAlign="left !important" fontSize="18px" viewWidth="4vw" margin="0 0 0 0">
+                <ResponsiveTitle width="75px" textAlign="left !important" fontSize="18px" viewWidth="4vw" margin="0 0 0 0">
                     {props.info}
                 </ResponsiveTitle>
-                <Flex width="150px" justify="space-between">
+                <Flex width="225px" justify="space-between">
                     <Flex direction="column" width="75px">
                         <ResponsiveTitle textAlign="center !important" fontSize="18px" viewWidth="4vw" margin="0 0 0 0">
                             {props.value1}
