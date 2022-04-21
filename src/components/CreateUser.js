@@ -78,7 +78,7 @@ export function InputProfile(props) {
                 <ResponsiveTitle width="300px" textAlign="left !important" fontSize="18px" viewWidth="4vw" margin="0 0 0 0">
                     {props.label}
                 </ResponsiveTitle>
-                <Input onInput={props.setValue} type={props.type} placeholder={props.placeholder} autocomplete={false} padding="0 0 0 0" width="300px" color="white" bgColor="transparent" border="none" />
+                <Input onInput={props.setValue} type={props.type} placeholder={props.placeholder} padding="0 0 0 0" width="300px" color="white" bgColor="transparent" border="none" />
             </Flex>
         </Flex>
     )
