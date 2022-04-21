@@ -11,7 +11,7 @@ function UserData() {
     const [fullname, setFullname] = useState("")
     const [username, setUsername] = useState("")
     const [email, setEmail] = useState("")
-    const [sex, setSex] = useState("")
+    const [sex, setSex] = useState("male")
     const [password, setPassword] = useState("")
     const [confirmPassword, setConfirmPassword] = useState("")
     const [admin, setAdmin] = useState(false)
