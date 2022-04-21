@@ -42,7 +42,7 @@ function UserData() {
             return false
         }
 
-        api.patch(`user/update/${user.username}`, body).then(res => {
+        api.patch(`user/${user.username}`, body).then(res => {
             message.style = "color: #00cf00; width: 400px; font-size: 11pt;"
             message.innerHTML = res.data
         }).catch(err => {

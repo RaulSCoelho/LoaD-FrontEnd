@@ -39,7 +39,7 @@ export async function back(user, setUser, classes) {
         user.currentClass = newCurrentClass
         user.currentModule = newCurrentModule
 
-        await api.patch(`user/update/${user.username}`, {
+        await api.patch(`user/${user.username}`, {
             currentClass: newCurrentClass,
             currentModule: newCurrentModule
         }).then(res => {
@@ -74,7 +74,7 @@ export async function next(user, setUser, classes) {
         user.currentClass = newCurrentClass
         user.currentModule = newCurrentModule
 
-        await api.patch(`user/update/${user.username}`, {
+        await api.patch(`user/${user.username}`, {
             currentClass: newCurrentClass,
             currentModule: newCurrentModule
         }).then(res => {

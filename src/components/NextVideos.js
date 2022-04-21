@@ -24,7 +24,7 @@ function NextVideos(props) {
         currentVideoTitle.innerHTML = props.titles[i + 1]
         currentVideoModule.innerHTML = props.titles[0]
 
-        api.patch(`user/update/${user.username}`, {
+        api.patch(`user/${user.username}`, {
             currentClass: newCurrentClass,
             currentModule: newCurrentModule
         }).then(res => {
