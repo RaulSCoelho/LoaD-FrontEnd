@@ -17,8 +17,9 @@ function UserData() {
     const [password, setPassword] = useState("")
     const [confirmPassword, setConfirmPassword] = useState("")
 
+    let message = document.querySelector('.userDataMessage')
+
     function change() {
-        let message = document.querySelector('.userDataMessage')
         message.innerHTML = ""
         setFullname("")
         setUsername("")
@@ -29,7 +30,6 @@ function UserData() {
     }
 
     function save() {
-        let message = document.querySelector('.userDataMessage')
         let body = {}
         if (fullname) body.fullname = fullname
         if (username) body.username = username
@@ -39,6 +39,12 @@ function UserData() {
         } else {
             message.style = "color: red; width: 400px; font-size: 11pt;"
             message.innerHTML = "Password and Confirm Password does not match"
+            return false
+        }
+
+        if (!fullname && !username && !email && !password && !confirmPassword) {
+            message.style = "color: red; width: 400px; font-size: 11pt;"
+            message.innerHTML = "All the fields are empty"
             return false
         }
 
@@ -55,11 +61,11 @@ function UserData() {
         <Flex className="userData" direction="column" width="50%">
             <ResponsiveTitle>Dados Pessoais</ResponsiveTitle>
             <div className="userDataMessage"></div>
-            <InputProfile edit={edit} label="Name:" type="text" userInfo={userInfo.fullname} setValue={(e) => setFullname(e.target.value)} />
-            <InputProfile edit={edit} label="Username:" type="text" userInfo={userInfo.username} setValue={(e) => setUsername(e.target.value)} />
-            <InputProfile edit={edit} label="Email:" type="text" userInfo={userInfo.email} setValue={(e) => setEmail(e.target.value)} />
-            <InputProfile edit={edit} label="Password:" type="password" userInfo="********" setValue={(e) => setPassword(e.target.value)} />
-            {edit ? <InputProfile edit={edit} label="Confirm Password:" type="password" userInfo="********" setValue={(e) => setConfirmPassword(e.target.value)} /> : <></>}
+            <InputProfile edit={edit} label="Name:" type="text" userInfo={userInfo.fullname} setValue={(e) => { setFullname(e.target.value); message.innerHTML = "" }} />
+            <InputProfile edit={edit} label="Username:" type="text" userInfo={userInfo.username} setValue={(e) => { setUsername(e.target.value); message.innerHTML = "" }} />
+            <InputProfile edit={edit} label="Email:" type="text" userInfo={userInfo.email} setValue={(e) => { setEmail(e.target.value); message.innerHTML = "" }} />
+            <InputProfile edit={edit} label="Password:" type="password" userInfo="********" setValue={(e) => { setPassword(e.target.value); message.innerHTML = "" }} />
+            {edit ? <InputProfile edit={edit} label="Confirm Password:" type="password" userInfo="********" setValue={(e) => { setConfirmPassword(e.target.value); message.innerHTML = "" }} /> : <></>}
             <Border width="400px" margin="10px 0 10px 0" />
             <Flex>
                 <Button onClick={change} bgColor="transparent" hoverBg="rgba(255, 255, 255, 0.2)" color="white" padding="0px 5px 5px 5px" border="none">

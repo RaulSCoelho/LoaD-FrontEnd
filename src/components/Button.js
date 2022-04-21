@@ -27,6 +27,8 @@ export const Button = styled("button")(
             margin: props.margin,
             border: props.border,
             color: props.color,
+            fontSize: props.fontSize,
+            display: props.display,
             "&:hover": {
                 backgroundColor: props.hoverBg
             },

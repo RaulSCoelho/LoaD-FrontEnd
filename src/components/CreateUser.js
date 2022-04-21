@@ -15,9 +15,10 @@ function UserData() {
     const [password, setPassword] = useState("")
     const [confirmPassword, setConfirmPassword] = useState("")
     const [admin, setAdmin] = useState(false)
+    
+    let message = document.querySelector('.createUserMessage')
 
     function create() {
-        let message = document.querySelector('.createUserMessage')
 
         if (password !== confirmPassword) {
             message.style = "color: red; width: 400px; font-size: 11pt;"
@@ -45,16 +46,16 @@ function UserData() {
         <Flex className="createUser" direction="column" width="50%">
             <ResponsiveTitle>Create a User</ResponsiveTitle>
             <div className="createUserMessage"></div>
-            <InputProfile label="Name:" type="text" setValue={(e) => setFullname(e.target.value)} placeholder="Full Name" />
-            <InputProfile label="Username:" type="text" setValue={(e) => setUsername(e.target.value)} placeholder="Username" />
-            <InputProfile label="Email:" type="text" setValue={(e) => setEmail(e.target.value)} placeholder="example@example.com" />
+            <InputProfile label="Name:" type="text" setValue={(e) => { setFullname(e.target.value); message.innerHTML = "" }} placeholder="Full Name" />
+            <InputProfile label="Username:" type="text" setValue={(e) => { setUsername(e.target.value); message.innerHTML = "" }} placeholder="Username" />
+            <InputProfile label="Email:" type="text" setValue={(e) => { setEmail(e.target.value); message.innerHTML = "" }} placeholder="example@example.com" />
             <Radio info="Sex:"
                 setClick1={(e) => { setSex(e.target.value); setRadio(!radio) }}
                 setClick2={(e) => { setSex(e.target.value); setRadio(!radio) }}
                 value1="male" checked1={radio} value2="female" checked2={!radio}
             />
-            <InputProfile label="Password:" type="password" setValue={(e) => setPassword(e.target.value)} placeholder="********" />
-            <InputProfile label="Confirm Password:" type="password" setValue={(e) => setConfirmPassword(e.target.value)} placeholder="********" />
+            <InputProfile label="Password:" type="password" setValue={(e) => { setPassword(e.target.value); message.innerHTML = "" }} placeholder="********" />
+            <InputProfile label="Confirm Password:" type="password" setValue={(e) => { setConfirmPassword(e.target.value); message.innerHTML = "" }} placeholder="********" />
             <Radio info="Admin:"
                 setClick1={() => setAdmin(!admin)}
                 setClick2={() => setAdmin(!admin)}
