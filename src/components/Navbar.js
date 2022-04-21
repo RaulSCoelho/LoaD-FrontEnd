@@ -4,6 +4,7 @@ import { IoMenuOutline as MenuIcon, IoClose as CloseIcon } from "react-icons/io5
 import { MdArrowDropDown as DropDown, MdArrowDropUp as DropUp } from "react-icons/md"
 import { CgProfile } from "react-icons/cg"
 import { FiLogOut as LogOut } from "react-icons/fi"
+import { AiFillHome as HomeIcon } from "react-icons/ai"
 import api from '../api';
 import { Flex } from './Flex';
 import { UserContext } from '../context/UserContext';
@@ -48,6 +49,11 @@ function Navbar() {
         <Configs>
             <DropUp className={dropUp ? 'dropUp-active' : 'dropUp'} color='rgb(28, 28, 28)' />
             <div className={configs ? 'configs-active' : 'configs'}>
+                <Flex className='configsOptions' onClick={() => Redirect('/')}>
+                    <ResponsiveTitle textAlign="right" fontSize="20px" margin="0 10px 2px 0" viewWidth="10vw">Home</ResponsiveTitle>
+                    <HomeIcon color="white" size="2em" />
+                </Flex>
+                <Border />
                 <Flex className='configsOptions' onClick={() => Redirect('/profile')}>
                     <ResponsiveTitle textAlign="right" fontSize="20px" margin="0 10px 2px 0" viewWidth="10vw">Profile</ResponsiveTitle>
                     <CgProfile color="white" size="2em" />
