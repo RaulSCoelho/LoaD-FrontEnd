@@ -50,17 +50,17 @@ function Navbar() {
             <DropUp className={dropUp ? 'dropUp-active' : 'dropUp'} color='rgb(28, 28, 28)' />
             <div className={configs ? 'configs-active' : 'configs'}>
                 <Flex className='configsOptions' onClick={() => Redirect('/')}>
-                    <ResponsiveTitle textAlign="right" fontSize="20px" margin="0 10px 2px 0" viewWidth="10vw">Home</ResponsiveTitle>
+                    <ResponsiveTitle className='optionName' textAlign="right" fontSize="20px" margin="0 10px 2px 0" viewWidth="10vw" color='#757575'>Home</ResponsiveTitle>
                     <HomeIcon color="white" size="2em" />
                 </Flex>
                 <Border />
                 <Flex className='configsOptions' onClick={() => Redirect('/profile')}>
-                    <ResponsiveTitle textAlign="right" fontSize="20px" margin="0 10px 2px 0" viewWidth="10vw">Profile</ResponsiveTitle>
+                    <ResponsiveTitle className='optionName' textAlign="right" fontSize="20px" margin="0 10px 2px 0" viewWidth="10vw" color='#757575'>Profile</ResponsiveTitle>
                     <CgProfile color="white" size="2em" />
                 </Flex>
                 <Border />
                 <Flex className='configsOptions' onClick={logout}>
-                    <ResponsiveTitle textAlign="right" fontSize="20px" margin="0 10px 2px 0" viewWidth="10vw">Log Out</ResponsiveTitle>
+                    <ResponsiveTitle className='optionName' textAlign="right" fontSize="20px" margin="0 10px 2px 0" viewWidth="10vw" color='#757575'>Log Out</ResponsiveTitle>
                     <LogOut color="white" size="2em" />
                 </Flex>
             </div>
@@ -149,8 +149,12 @@ export const Configs = styled.div`
     }
 
     .configsOptions{
-        width: 80%;
+        width: 128px;
         cursor: pointer;
+
+        &:hover .optionName{
+            color: white;
+        }
     }
 `
 
