@@ -37,45 +37,48 @@ function UserData() {
         if (password) if (password === confirmPassword) {
             body.password = password
         } else {
-            message.style = "color: red; width: 400px; font-size: 11pt;"
+            message.style = "color: red; width: 350px; font-size: 11pt;"
             message.innerHTML = "Password and Confirm Password does not match"
             return false
         }
 
         if (!fullname && !username && !email && !password && !confirmPassword) {
-            message.style = "color: red; width: 400px; font-size: 11pt;"
+            message.style = "color: red; width: 350px; font-size: 11pt;"
             message.innerHTML = "All the fields are empty"
             return false
         }
 
         api.patch(`user/${user.username}`, body).then(res => {
-            message.style = "color: #00cf00; width: 400px; font-size: 11pt;"
+            message.style = "color: #00cf00; width: 350px; font-size: 11pt;"
             message.innerHTML = res.data
         }).catch(err => {
-            message.style = "color: red; width: 400px; font-size: 11pt;"
+            message.style = "color: red; width: 350px; font-size: 11pt;"
             message.innerHTML = err.response.data
         })
     }
 
     return (
-        <Flex className="userData" direction="column" width="50%">
-            <ResponsiveTitle>Dados Pessoais</ResponsiveTitle>
-            <div className="userDataMessage"></div>
-            <InputProfile edit={edit} label="Name:" type="text" userInfo={userInfo.fullname} setValue={(e) => { setFullname(e.target.value); message.innerHTML = "" }} />
-            <InputProfile edit={edit} label="Username:" type="text" userInfo={userInfo.username} setValue={(e) => { setUsername(e.target.value); message.innerHTML = "" }} />
-            <InputProfile edit={edit} label="Email:" type="text" userInfo={userInfo.email} setValue={(e) => { setEmail(e.target.value); message.innerHTML = "" }} />
-            <InputProfile edit={edit} label="Password:" type="password" userInfo="********" setValue={(e) => { setPassword(e.target.value); message.innerHTML = "" }} />
-            {edit ? <InputProfile edit={edit} label="Confirm Password:" type="password" userInfo="********" setValue={(e) => { setConfirmPassword(e.target.value); message.innerHTML = "" }} /> : <></>}
-            <Border width="400px" margin="10px 0 10px 0" />
-            <Flex>
-                <Button onClick={change} bgColor="transparent" hoverBg="rgba(255, 255, 255, 0.2)" color="white" padding="0px 5px 5px 5px" border="none">
-                    {edit ? "Cancel" : "Change"}
-                </Button>
-                {edit ?
-                    <Button onClick={save} bgColor="transparent" hoverBg="rgba(255, 255, 255, 0.2)" color="white" margin="0 0 0 20px" padding="0px 5px 5px 5px" border="none">
-                        Save
-                    </Button> : <></>
-                }
+        <Flex justify="space-between" alignItems="start" margin="40px 0 0 0" mediaDirection="column">
+            <ResponsiveTitle textAlign="left !important" mediaWidth="100%" mediaTextAlign="center !important">
+                Dados Pessoais
+            </ResponsiveTitle>
+            <Flex className="userData" direction="column">
+                <div className="userDataMessage"></div>
+                <InputProfile edit={edit} label="Name:" type="text" userInfo={userInfo.fullname} setValue={(e) => { setFullname(e.target.value); message.innerHTML = "" }} />
+                <InputProfile edit={edit} label="Username:" type="text" userInfo={userInfo.username} setValue={(e) => { setUsername(e.target.value); message.innerHTML = "" }} />
+                <InputProfile edit={edit} label="Email:" type="text" userInfo={userInfo.email} setValue={(e) => { setEmail(e.target.value); message.innerHTML = "" }} />
+                <InputProfile edit={edit} label="Password:" type="password" userInfo="********" setValue={(e) => { setPassword(e.target.value); message.innerHTML = "" }} />
+                {edit ? <InputProfile edit={edit} label="Confirm Password:" type="password" userInfo="********" setValue={(e) => { setConfirmPassword(e.target.value); message.innerHTML = "" }} /> : <></>}
+                <Flex>
+                    <Button onClick={change} bgColor="transparent" hoverBg="rgba(255, 255, 255, 0.2)" color="white" padding="0px 5px 2px 5px" border="none">
+                        {edit ? "Cancel" : "Change"}
+                    </Button>
+                    {edit ?
+                        <Button onClick={save} bgColor="transparent" hoverBg="rgba(255, 255, 255, 0.2)" color="white" margin="0 0 0 20px" padding="0px 5px 2px 5px" border="none">
+                            Save
+                        </Button> : <></>
+                    }
+                </Flex>
             </Flex>
         </Flex>
     )
@@ -83,20 +86,20 @@ function UserData() {
 
 export function InputProfile(props) {
     return (
-        <Flex direction="column">
-            <Border width="400px" margin="10px 0 10px 0" />
+        <Flex direction="column" width="350px">
             <Flex direction="column">
-                <ResponsiveTitle width="300px" textAlign="left !important" fontSize="18px" viewWidth="4vw" margin="0 0 0 0">
+                <ResponsiveTitle width="350px" textAlign="left !important" fontSize="18px" viewWidth="4vw" margin="0 0 0 0">
                     {props.label}
                 </ResponsiveTitle>
                 {props.edit ?
-                    <Input onInput={props.setValue} type={props.type} placeholder={props.userInfo} padding="0 0 0 0" width="300px" color="white" bgColor="transparent" border="none" />
+                    <Input onInput={props.setValue} type={props.type} placeholder={props.userInfo} padding="0 0 0 0" width="350px" color="white" bgColor="transparent" border="none" />
                     :
-                    <ResponsiveTitle width="300px" textAlign="left !important" fontSize="18px" viewWidth="4vw" margin="0 0 0 0">
+                    <ResponsiveTitle width="350px" textAlign="left !important" fontSize="18px" viewWidth="4vw" margin="0 0 0 0">
                         {props.userInfo}
                     </ResponsiveTitle>
                 }
             </Flex>
+            <Border width="350px" margin="10px 0 10px 0" />
         </Flex>
     )
 }

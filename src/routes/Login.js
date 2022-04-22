@@ -26,7 +26,7 @@ function Login() {
     }
 
     return (
-        <Box className="login" minHeight="100vh" mediaMarginTop="0px">
+        <Box className="login" minHeight="100vh" mediaMarginTop="0px" bgImage="linear-gradient(rgb(173, 173, 173), rgb(18, 18, 18),  rgb(18, 18, 18));">
             <Flex justify="center">
                 <Flex
                     justify="space-evenly" direction="column" width="300px"

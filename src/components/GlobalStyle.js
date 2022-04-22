@@ -39,10 +39,6 @@ code {
   background-color:rgba(0, 0, 0, 0.2);
 }
 
-#root{
-  background-image: linear-gradient(rgb(173, 173, 173), rgb(18, 18, 18),  rgb(18, 18, 18));
-}
-
 .nextVideos{
   border-top: 1px solid #444;
   padding-top: 30px;

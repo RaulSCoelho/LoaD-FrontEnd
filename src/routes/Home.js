@@ -28,8 +28,8 @@ function Home() {
                 <Forward size="1.8em" color="white" />
             </NextVideoBtnSmallVW>
         </Flex>
-        <Box className="home">
-            <Flex width="80vw" direction="column" margin="0px 0px 70px 0px">
+        <Box className="home" margin="-70px 0 0 0" bgImage="linear-gradient(rgb(173, 173, 173), rgb(18, 18, 18),  rgb(18, 18, 18));">
+            <Flex width="80vw" direction="column" margin="70px 0px 70px 0px">
                 <CurrentVideo />
                 <div className="nextVideos">
                     {classes.map((module, i) => (

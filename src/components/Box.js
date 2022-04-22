@@ -20,11 +20,13 @@ export const Box = styled("div")(
     (props) => {
         return {
             backgroundColor: props.bgColor,
+            backgroundImage: props.bgImage,
             width: props.width,
             height: props.height,
             minHeight: props.minHeight,
             padding: props.padding,
             margin: props.margin,
+            alignItems: props.alignItems,
             "@media (max-width: 1258px)": {
                 marginTop: props.mediaMarginTop
             },

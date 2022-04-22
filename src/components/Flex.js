@@ -5,10 +5,10 @@ export const Flex = styled("div")(
         width: "100%",
         padding: "0",
         display: "flex",
-        textAlign: "center",
-        alignItems: "center",
-        flexDirection: "row",
         justifyContent: "center",
+        alignItems: "center",
+        textAlign: "center",
+        flexDirection: "row",
         scrollbarWidth: "none",
 
         "::-webkit-scrollbar": {
@@ -30,9 +30,17 @@ export const Flex = styled("div")(
             padding: props.padding,
             flexDirection: props.direction,
             justifyContent: props.justify,
+            alignItems: props.alignItems,
             overflow: props.overflow,
             transition: props.transition,
             boxShadow: props.boxShadow,
+            "@media(max-width: 1610px)": {
+                width: props.mediaWidth,
+            },
+            "@media(max-width: 1258px)": {
+                flexDirection: props.mediaDirection,
+                margin: props.mediaMargin,
+            },
         }
     }
 )
