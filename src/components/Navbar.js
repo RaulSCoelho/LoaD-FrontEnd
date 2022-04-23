@@ -1,6 +1,6 @@
 import React, { useContext, useState } from 'react';
 import styled from "styled-components"
-import { IoMenuOutline as MenuIcon, IoClose as CloseIcon } from "react-icons/io5"
+import { IoChatbubbleOutline as ChatIcon, IoClose as CloseIcon } from "react-icons/io5"
 import { MdArrowDropDown as DropDown, MdArrowDropUp as DropUp } from "react-icons/md"
 import { CgProfile } from "react-icons/cg"
 import { FiLogOut as LogOut } from "react-icons/fi"
@@ -11,6 +11,7 @@ import { UserContext } from '../context/UserContext';
 import { ResponsiveTitle } from './ResponsiveTitle';
 import { Border } from './Border';
 import { Redirect } from './Redirect';
+import Chat from './Chat';
 
 function Navbar() {
     const { user } = useContext(UserContext)
@@ -37,8 +38,8 @@ function Navbar() {
     return (<>
         <NavbarTop>
             <Flex justify="space-between">
-                <div onClick={() => setSidebar(!sidebar)} className='menuIcon'>
-                    <MenuIcon size="2em" color='white' />
+                <div onClick={() => setSidebar(!sidebar)} className='chatIcon'>
+                    <ChatIcon size="2em" color='white' />
                 </div>
                 <Flex onClick={() => { setConfigs(!configs); setDropUp(!dropUp) }} className='configsBtn' width="unset">
                     <img className='profileImg' src={userSex === "female" ? profileImg.female : profileImg.male} width="50" height="50" alt="" />
@@ -68,6 +69,9 @@ function Navbar() {
         <Menu>
             <div className={sidebar ? 'menu-active' : 'menu'}>
                 <CloseIcon onClick={() => setSidebar(!sidebar)} className='closeMenu' size="2em" color='white' />
+                <Flex direction="column">
+                    <Chat />
+                </Flex>
             </div>
         </Menu>
     </>)
@@ -86,7 +90,7 @@ export const NavbarTop = styled.div`
         cursor: pointer;
     }
 
-    .menuIcon{
+    .chatIcon{
         width: 50px;
         height: 50px;
         padding: 5px;

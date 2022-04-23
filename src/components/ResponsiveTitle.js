@@ -21,6 +21,7 @@ export const ResponsiveTitle = styled("h1")(
             height: props.height,
             maxWidth: props.maxWidth,
             fontWeight: props.fontWeight,
+            wordBreak: props.wordBreak,
             fontSize: `min(${props.fontSize}, max(calc(${props.viewWidth} - ${props.fontSize}), 16px))`,
             "@media(max-width: 1610px)": {
                 textAlign: props.mediaTextAlign,

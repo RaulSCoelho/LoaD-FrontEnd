@@ -22,9 +22,9 @@ function AddClasses() {
 
     let message = document.querySelector('.createModuleMessage')
 
-    function create() {
+    async function create() {
 
-        api.post("classes", {
+        await api.post("classes", {
             module: module,
             videos: videosArray,
             titles: titlesArray,

@@ -9,12 +9,11 @@ export const Box = styled("div")(
         alignItems: "center",
 
         "@media (max-width: 1258px)": {
-            marginTop: "72px"
+            marginTop: "0px"
         },
 
         "@media (max-width: 920px)": {
-            padding: "0",
-            marginTop: "0px"
+            padding: "0"
         }
     },
     (props) => {

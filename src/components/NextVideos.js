@@ -9,7 +9,7 @@ function NextVideos(props) {
     const { user, setUser } = useContext(UserContext)
     const { classes } = useContext(ClassesContext)
 
-    function changeUrl(link, i) {
+    async function changeUrl(link, i) {
         const currentVideo = document.querySelector('.currentVideo')
         const currentVideoTitle = document.querySelector('.currentVideoTitle')
         const currentVideoModule = document.querySelector('.currentVideoModule')
@@ -24,7 +24,7 @@ function NextVideos(props) {
         currentVideoTitle.innerHTML = props.titles[i + 1]
         currentVideoModule.innerHTML = props.titles[0]
 
-        api.patch(`user/${user.username}`, {
+        await api.patch(`user/${user.username}`, {
             currentClass: newCurrentClass,
             currentModule: newCurrentModule
         }).then(res => {

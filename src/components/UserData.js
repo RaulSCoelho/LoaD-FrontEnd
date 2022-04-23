@@ -29,7 +29,7 @@ function UserData() {
         setEdit(!edit)
     }
 
-    function save() {
+    async function save() {
         let body = {}
         if (fullname) body.fullname = fullname
         if (username) body.username = username
@@ -48,7 +48,7 @@ function UserData() {
             return false
         }
 
-        api.patch(`user/${user.username}`, body).then(res => {
+        await api.patch(`user/${user.username}`, body).then(res => {
             message.style = "color: #00cf00; width: 350px; font-size: 11pt;"
             message.innerHTML = res.data
         }).catch(err => {

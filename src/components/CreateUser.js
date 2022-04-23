@@ -18,7 +18,7 @@ function UserData() {
 
     let message = document.querySelector('.createUserMessage')
 
-    function create() {
+    async function create() {
 
         if (password !== confirmPassword) {
             message.style = "color: red; width: 350px; font-size: 11pt;"
@@ -26,7 +26,7 @@ function UserData() {
             return false
         }
 
-        api.post("user/register", {
+        await api.post("user/register", {
             username: username,
             fullname: fullname,
             email: email,
