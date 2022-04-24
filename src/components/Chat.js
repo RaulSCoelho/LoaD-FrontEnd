@@ -149,7 +149,7 @@ function Chat() {
                     <Flex direction="column" alignItems="end">
                         <Flex>
                             <ResponsiveTitle
-                                width="80%" textAlign="left !important" fontSize="15px" viewWidth="4vw" fontWeight="bold" margin="0 0 3px 0"
+                                textAlign="left !important" fontSize="15px" viewWidth="4vw" fontWeight="bold" margin="0 0 3px 0"
                                 color={props.admin ? "rgba(100, 0, 194, 0.692)" : props.username === User.username ? "rgba(0, 255, 191, 0.692)" : "rgba(21, 255, 0, 0.692)"}>
                                 {props.username}
                             </ResponsiveTitle>
