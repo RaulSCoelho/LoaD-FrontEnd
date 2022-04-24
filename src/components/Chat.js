@@ -1,5 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
 import api from "../api"
+import { IoMdTrash } from "react-icons/io"
 import { BiSend } from "react-icons/bi"
 import { Flex } from "./Flex";
 import { TextArea } from "./TextArea";
@@ -8,7 +9,7 @@ import { ResponsiveTitle } from "./ResponsiveTitle";
 
 function Chat() {
     const { user } = useContext(UserContext)
-    const username = user ? user.username : ""
+    const User = user ? user : ""
     const [message, setMessage] = useState("")
     const [messageHeight, setMessageHeight] = useState("")
     const [chat, setChat] = useState("")
@@ -35,13 +36,15 @@ function Chat() {
             setChat(res.data)
         })
     }
-
     async function sendMessage() {
         const textArea = document.querySelector('.textArea')
         const element = document.querySelector('.chat')
         await api.post('chat', {
             message: message,
-            username: username,
+            user: {
+                username: User.username,
+                admin: User.admin
+            },
             day: day,
             time: time,
         })
@@ -53,7 +56,7 @@ function Chat() {
 
     function textBox(e) {
         const textAreaHeight = e.style.height
-        e.style.height = (e.value.length) + "px"
+        e.style.height = (e.value.length + 5) + "px"
         setMessageHeight((Number(textAreaHeight.replace('px', '')) + 20) + "px")
         if (e.value.length === 0) setMessageHeight("54.5px")
     }
@@ -70,25 +73,35 @@ function Chat() {
         }
     }
 
+    async function removeMessage(id) {
+        await api.delete(`chat/${id}`).then(res => {
+            getMessages()
+        })
+    }
+
     return (
         <Flex direction="column" width="80%" height="85vh" bgColor="rgb(20, 20, 20)" borderRadius="10px" justify="end">
             <Flex className="chat" overflowY="scroll" overscrollBehavior="none" alignItems="unset">
                 <Flex direction="column" padding="10px !important" justify="left">
                     {chat ? chat.map((chat) =>
-                        chat.username === username ?
+                        chat.user.username === User.username ?
                             <Message
                                 justify="right"
-                                username={chat.username}
+                                username={chat.user.username}
+                                admin={chat.user.admin}
                                 message={chat.message}
                                 day={chat.day}
                                 time={chat.time}
+                                removeMessage={() => removeMessage(chat._id)}
                             /> :
                             <Message
                                 justify="left"
-                                username={chat.username}
+                                username={chat.user.username}
+                                admin={chat.user.admin}
                                 message={chat.message}
                                 day={chat.day}
                                 time={chat.time}
+                                removeMessage={() => removeMessage(chat._id)}
                             />
                     ) : <></>}
                 </Flex>
@@ -137,14 +150,24 @@ function Chat() {
                 <Flex width="unset" maxWidth="380px" minWidth="180px" textAlign="right" display="unset" padding="5px !important" bgColor="rgb(65, 65, 65)" borderRadius="6px">
                     <Flex alignItems="end">
                         <Flex width="80%" direction="column">
-                            <ResponsiveTitle textAlign="left !important" fontSize="15px" viewWidth="4vw" margin="0 0 3px 0" color="rgba(21, 255, 0, 0.692)" fontWeight="bold">
+                            <ResponsiveTitle textAlign="left !important" fontSize="15px" viewWidth="4vw" margin="0 0 3px 0" color={props.admin ? "rgba(100, 0, 194, 0.692)" : props.username === User.username ? "rgba(0, 255, 191, 0.692)" : "rgba(21, 255, 0, 0.692)"} fontWeight="bold">
                                 {props.username}
                             </ResponsiveTitle>
                             <ResponsiveTitle textAlign="left !important" fontSize="15px" viewWidth="4vw" margin="0 0 3px 0" wordBreak="break-word">
                                 {props.message}
                             </ResponsiveTitle>
                         </Flex>
-                        <Flex width="20%">
+                        <Flex width="20%" direction="column" justify="space-between">
+                            {props.admin ?
+                                <Flex justify="right">
+                                    <IoMdTrash
+                                        color="#757575"
+                                        onMouseOver={(e) => e.target.style.color = "rgba(255, 0, 0, 0.692)"}
+                                        onMouseOut={(e) => e.target.style.color = "#757575"}
+                                        onClick={props.removeMessage}
+                                    />
+                                </Flex> : <></>
+                            }
                             <ResponsiveTitle textAlign="right !important" fontSize="12px" viewWidth="4vw" margin="0 0 0 0" color="#757575">
                                 {props.time}
                             </ResponsiveTitle>
