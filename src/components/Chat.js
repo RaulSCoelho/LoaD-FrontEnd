@@ -35,6 +35,7 @@ function Chat() {
             setChat(res.data)
         })
     }
+
     async function sendMessage() {
         const textArea = document.querySelector('.textArea')
         const element = document.querySelector('.chat')
@@ -57,18 +58,6 @@ function Chat() {
         e.style.height = (e.value.length + 10) + "px"
         setMessageHeight((e.value.length + 20) + "px")
         if (e.value.length === 0) setMessageHeight("54.5px")
-    }
-
-    function enterPressed(e) {
-        if (e.keyCode === 13) {
-            sendMessage()
-        }
-    }
-
-    function preventBreakLine(e) {
-        if (e.key === 'Enter') {
-            e.preventDefault()
-        }
     }
 
     async function removeMessage(id) {
@@ -109,8 +98,8 @@ function Chat() {
                     className="textArea"
                     placeholder="Message"
                     onInput={(e) => { setMessage(e.target.value); textBox(e.target) }}
-                    onKeyUp={(e) => enterPressed(e)}
-                    onKeyDown={(e) => preventBreakLine(e)}
+                    onKeyUp={(e) => { if (e.keyCode === 13) sendMessage() }}
+                    onKeyDown={(e) => { if (e.key === 'Enter') e.preventDefault() }}
                     color="white"
                     height="36px"
                     width="80%"
