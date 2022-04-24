@@ -153,7 +153,7 @@ function Chat() {
                                 color={props.admin ? "rgba(100, 0, 194, 0.692)" : props.username === User.username ? "rgba(0, 255, 191, 0.692)" : "rgba(21, 255, 0, 0.692)"}>
                                 {props.username}
                             </ResponsiveTitle>
-                            {props.admin ?
+                            {User.admin ?
                                 <Flex width="20%" justify="right" cursor="pointer">
                                     <IoMdTrash
                                         color="#757575"
