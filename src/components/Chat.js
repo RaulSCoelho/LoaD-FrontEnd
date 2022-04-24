@@ -37,6 +37,8 @@ function Chat() {
     }
 
     async function sendMessage() {
+        const textArea = document.querySelector('.textArea')
+        const element = document.querySelector('.chat')
         await api.post('chat', {
             message: message,
             username: username,
@@ -44,7 +46,7 @@ function Chat() {
             time: time,
         })
         getMessages()
-        const element = document.querySelector('.chat')
+        textArea.value = ""
         element.style = "scroll-behavior: smooth;"
         setTimeout(() => element.scrollTop = element.scrollHeight, 300)
     }
@@ -57,10 +59,8 @@ function Chat() {
     }
 
     function enterPressed(e) {
-        const textArea = document.querySelector('.textArea')
         if (e.keyCode === 13) {
             sendMessage()
-            textArea.value = ""
         }
     }
 
