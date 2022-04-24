@@ -23,9 +23,8 @@ function Chat() {
     const day = `${String(currentDay).length === 1 ? `0${currentDay}` : currentDay}/${String(currentMonth).length === 1 ? `0${currentMonth + 1}` : currentMonth + 1}/${currentYear}`
     const time = `${String(hour).length === 1 ? '0' + hour : hour}:${String(minutes).length === 1 ? '0' + minutes : minutes}`
 
-    let count1 = 0
-    let count2 = 0
-    let initialDay = day
+    let count = 0
+    let messageDay = ""
 
     useEffect(() => {
         setInterval(getMessages, 1000)
@@ -131,46 +130,49 @@ function Chat() {
     )
 
     function Message(props) {
-        let messageDay = props.day
-        if (messageDay === initialDay) {
-            count1++
-            count2 = 0
+
+        if (messageDay !== props.day) {
+            messageDay = props.day
+            count = 1
         } else {
-            initialDay = props.day
-            count2++
+            count = 0
         }
 
         return (<>
             <Flex>
                 <ResponsiveTitle fontSize="15px" viewWidth="4vw" color="#757575">
-                    {props.day !== currentDay && (count1 === 1 || count2 === 1) ? props.day : ""}
+                    {count === 1 ? props.day : ""}
                 </ResponsiveTitle>
             </Flex>
             <Flex justify={props.justify} padding="10px 0 10px 0 !important">
                 <Flex width="unset" maxWidth="380px" minWidth="180px" textAlign="right" display="unset" padding="5px !important" bgColor="rgb(65, 65, 65)" borderRadius="6px">
-                    <Flex alignItems="end">
-                        <Flex width="80%" direction="column">
-                            <ResponsiveTitle textAlign="left !important" fontSize="15px" viewWidth="4vw" margin="0 0 3px 0" color={props.admin ? "rgba(100, 0, 194, 0.692)" : props.username === User.username ? "rgba(0, 255, 191, 0.692)" : "rgba(21, 255, 0, 0.692)"} fontWeight="bold">
+                    <Flex direction="column" alignItems="end">
+                        <Flex>
+                            <ResponsiveTitle
+                                width="80%" textAlign="left !important" fontSize="15px" viewWidth="4vw" fontWeight="bold" margin="0 0 3px 0"
+                                color={props.admin ? "rgba(100, 0, 194, 0.692)" : props.username === User.username ? "rgba(0, 255, 191, 0.692)" : "rgba(21, 255, 0, 0.692)"}>
                                 {props.username}
                             </ResponsiveTitle>
-                            <ResponsiveTitle textAlign="left !important" fontSize="15px" viewWidth="4vw" margin="0 0 3px 0" wordBreak="break-word">
-                                {props.message}
-                            </ResponsiveTitle>
-                        </Flex>
-                        <Flex width="20%" direction="column" justify="space-between">
                             {props.admin ?
-                                <Flex justify="right">
+                                <Flex width="20%" justify="right" cursor="pointer">
                                     <IoMdTrash
                                         color="#757575"
-                                        onMouseOver={(e) => e.target.style.color = "rgba(255, 0, 0, 0.692)"}
-                                        onMouseOut={(e) => e.target.style.color = "#757575"}
+                                        onMouseOver={(e) => e.target.style = "color: rgba(255, 0, 0, 0.692);"}
+                                        onMouseOut={(e) => e.target.style = "color: #757575;"}
                                         onClick={props.removeMessage}
                                     />
                                 </Flex> : <></>
                             }
-                            <ResponsiveTitle textAlign="right !important" fontSize="12px" viewWidth="4vw" margin="0 0 0 0" color="#757575">
-                                {props.time}
+                        </Flex>
+                        <Flex alignItems="end">
+                            <ResponsiveTitle textAlign="left !important" fontSize="15px" viewWidth="4vw" margin="0 0 3px 0" wordBreak="break-word">
+                                {props.message}
                             </ResponsiveTitle>
+                            <Flex width="20%" direction="column" justify="space-between" padding="5px 0 0 0">
+                                <ResponsiveTitle textAlign="right !important" fontSize="12px" viewWidth="4vw" margin="0 0 0 0" color="#757575">
+                                    {props.time}
+                                </ResponsiveTitle>
+                            </Flex>
                         </Flex>
                     </Flex>
                 </Flex>
