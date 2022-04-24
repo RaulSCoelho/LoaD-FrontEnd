@@ -54,9 +54,8 @@ function Chat() {
     }
 
     function textBox(e) {
-        const textAreaHeight = e.style.height
-        e.style.height = (e.value.length + 5) + "px"
-        setMessageHeight((Number(textAreaHeight.replace('px', '')) + 20) + "px")
+        e.style.height = (e.value.length + 10) + "px"
+        setMessageHeight((e.value.length + 20) + "px")
         if (e.value.length === 0) setMessageHeight("54.5px")
     }
 
@@ -153,7 +152,7 @@ function Chat() {
                                 color={props.admin ? "rgba(100, 0, 194, 0.692)" : props.username === User.username ? "rgba(0, 255, 191, 0.692)" : "rgba(21, 255, 0, 0.692)"}>
                                 {props.username}
                             </ResponsiveTitle>
-                            {User.admin ?
+                            {User.admin || (props.username === User.username) ?
                                 <Flex width="20%" justify="right" cursor="pointer">
                                     <IoMdTrash
                                         color="#757575"
