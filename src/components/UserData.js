@@ -8,7 +8,7 @@ import { ResponsiveTitle } from "../components/ResponsiveTitle";
 import { UserContext } from "../context/UserContext";
 
 function UserData() {
-    const { user } = useContext(UserContext)
+    const { user, setUser } = useContext(UserContext)
     const userInfo = user ? user : ""
     const [edit, setEdit] = useState(false)
     const [fullname, setFullname] = useState("")
@@ -29,7 +29,7 @@ function UserData() {
         setEdit(!edit)
     }
 
-    async function save() {
+    function save() {
         let body = {}
         if (fullname) body.fullname = fullname
         if (username) body.username = username
@@ -48,13 +48,19 @@ function UserData() {
             return false
         }
 
-        await api.patch(`user/${user.username}`, body).then(res => {
+        api.patch(`user/${user.username}`, body).then(res => {
             message.style = "color: #00cf00; width: 350px; font-size: 11pt;"
             message.innerHTML = res.data
         }).catch(err => {
             message.style = "color: red; width: 350px; font-size: 11pt;"
             message.innerHTML = err.response.data
         })
+
+        if (body.username) user.username = body.username
+        if (body.fullname) user.fullname = body.fullname
+        if (body.email) user.email = body.email
+
+        setUser(user)
     }
 
     return (

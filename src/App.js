@@ -31,8 +31,8 @@ function App() {
         }
         dispatch(Logged())
         setClasses(res.data.modules)
-
-        api.get(`user/${res.data.jwt.user.username}`).then(res => {
+        
+        api.get(`user/id/${res.data.jwt.user._id}`).then(res => {
           setUser(res.data)
         })
 

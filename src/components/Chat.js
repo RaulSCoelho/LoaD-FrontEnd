@@ -27,7 +27,8 @@ function Chat() {
     let messageDay = ""
 
     useEffect(() => {
-        setInterval(getMessages, 1000)
+        //setInterval(getMessages, 1000)
+        getMessages()
     }, [user])
 
     async function getMessages() {
