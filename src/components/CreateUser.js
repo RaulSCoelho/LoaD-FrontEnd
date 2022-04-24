@@ -29,7 +29,7 @@ function UserData() {
         await api.post("user/register", {
             username: username,
             fullname: fullname,
-            email: email,
+            email: email === "" ? "Coloque seu email" : email,
             sex: sex,
             password: password,
             admin: admin

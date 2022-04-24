@@ -20,7 +20,6 @@ function App() {
 
   const dispatch = useDispatch()
   const isLogged = useSelector(state => state.logged)
-  //const isAdmin = useSelector(state => state.admin)
   const [isNotLogged, setIsNotLogged] = useState(false)
 
   useEffect(() => {
