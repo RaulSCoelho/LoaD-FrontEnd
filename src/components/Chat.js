@@ -34,7 +34,6 @@ function Chat() {
         await api.get('chat').then(res => {
             setChat(res.data)
         })
-        document.querySelector('.chat').scrollTo(0, 1000)
     }
 
     async function sendMessage() {
@@ -45,6 +44,9 @@ function Chat() {
             time: time,
         })
         getMessages()
+        const element = document.querySelector('.chat')
+        element.style = "scroll-behavior: smooth;"
+        setTimeout(() => element.scrollTop = element.scrollHeight, 300)
     }
 
     function textBox(e) {
@@ -52,6 +54,20 @@ function Chat() {
         e.style.height = (e.value.length) + "px"
         setMessageHeight((Number(textAreaHeight.replace('px', '')) + 20) + "px")
         if (e.value.length === 0) setMessageHeight("54.5px")
+    }
+
+    function enterPressed(e) {
+        const textArea = document.querySelector('.textArea')
+        if (e.keyCode === 13) {
+            sendMessage()
+            textArea.value = ""
+        }
+    }
+
+    function preventBreakLine(e) {
+        if (e.key === 'Enter') {
+            e.preventDefault()
+        }
     }
 
     return (
@@ -78,8 +94,22 @@ function Chat() {
                 </Flex>
             </Flex>
             <Flex height={messageHeight} minHeight="54.5px" maxHeight="110px" justify="space-evenly" bgColor="rgb(37, 37, 37)" borderRadius="10px" borderTopLeftRadius="0px" borderTopRightRadius="0px">
-                <TextArea onInput={(e) => { setMessage(e.target.value); textBox(e.target) }} color="white" height="36px" width="80%" minHeight="36px"
-                    maxHeight="100px" border="none" padding="5px" margin="10px 0 10px 0" bgColor="rgb(20, 20, 20)" />
+                <TextArea
+                    className="textArea"
+                    placeholder="Message"
+                    onInput={(e) => { setMessage(e.target.value); textBox(e.target) }}
+                    onKeyUp={(e) => enterPressed(e)}
+                    onKeyDown={(e) => preventBreakLine(e)}
+                    color="white"
+                    height="36px"
+                    width="80%"
+                    minHeight="36px"
+                    maxHeight="100px"
+                    border="none"
+                    padding="5px"
+                    margin="10px 0 10px 0"
+                    bgColor="rgb(20, 20, 20)"
+                />
                 <Flex width="24px" height="24px" cursor="pointer" >
                     <BiSend onClick={sendMessage} color="white" size="1.5em" />
                 </Flex>

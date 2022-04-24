@@ -12,10 +12,12 @@ import { ResponsiveTitle } from './ResponsiveTitle';
 import { Border } from './Border';
 import { Redirect } from './Redirect';
 import Chat from './Chat';
+import { Button } from './Button';
 
 function Navbar() {
     const { user } = useContext(UserContext)
     const userSex = user ? user.sex : ""
+    const userAdmin = user ? user.admin : false
 
     const profileImg = {
         male: "https://chi01pap002files.storage.live.com/y4mBJY9JvJLqTfZlCQeUBsgM9_SZ8r6euTxwT2YfdR_QVPDK61keIzYY_TYoAj0SjK19nOydvonoHSMTk4Ej5nf326ALtRFeS26VbtHT0eZPmdpQKhtWaXUbwdkiVqdFBykl2leBygn8FTZiVYQ0S8bxigcN4vNHv4VwowmCJjPtHFM2ND162IOYP-IDESerMX_?width=192&height=192&cropmode=none",
@@ -35,10 +37,22 @@ function Navbar() {
         })
     }
 
+    function scrollBottom() {
+        const element = document.querySelector('.chat')
+        element.scrollTop = element.scrollHeight
+        element.style = "scroll-behavior: unset;"
+    }
+
+    async function clearMessages() {
+        await api.get('chat').then(res => {
+            res.data.map((message) => api.delete(`chat/${message._id}`))
+        })
+    }
+
     return (<>
         <NavbarTop>
             <Flex justify="space-between">
-                <div onClick={() => setSidebar(!sidebar)} className='chatIcon'>
+                <div onClick={() => { setSidebar(!sidebar); scrollBottom() }} className='chatIcon'>
                     <ChatIcon size="2em" color='white' />
                 </div>
                 <Flex onClick={() => { setConfigs(!configs); setDropUp(!dropUp) }} className='configsBtn' width="unset">
@@ -70,6 +84,13 @@ function Navbar() {
             <div className={sidebar ? 'menu-active' : 'menu'}>
                 <CloseIcon onClick={() => setSidebar(!sidebar)} className='closeMenu' size="2em" color='white' />
                 <Flex direction="column">
+                    {userAdmin ?
+                        <Flex>
+                            <Button onClick={clearMessages} bgColor="transparent" hoverBg="rgba(255, 255, 255, 0.2)" color="white" padding="0px 5px 2px 5px" border="none">
+                                Clear Messages
+                            </Button>
+                        </Flex> : <></>
+                    }
                     <Chat />
                 </Flex>
             </div>

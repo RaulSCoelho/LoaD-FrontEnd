@@ -25,6 +25,12 @@ function Login() {
         })
     }
 
+    function enterPressed(e) {
+        if (e.keyCode === 13) {
+            login()
+        }
+    }
+
     return (
         <Box className="login" minHeight="100vh" mediaMarginTop="0px" bgImage="linear-gradient(rgb(173, 173, 173), rgb(18, 18, 18),  rgb(18, 18, 18));">
             <Flex justify="center">
@@ -35,8 +41,8 @@ function Login() {
                 >
                     <div id="loginError"></div>
                     <ResponsiveTitle color="black">Login</ResponsiveTitle>
-                    <Input onChange={(e) => setUsername(e.target.value)} type="text" id="username" placeholder="username" />
-                    <Input onChange={(e) => setPassword(e.target.value)} type="password" id="password" placeholder="password" />
+                    <Input onChange={(e) => setUsername(e.target.value)} type="text" id="username" placeholder="username" onKeyUp={(e) => enterPressed(e)} />
+                    <Input onChange={(e) => setPassword(e.target.value)} type="password" id="password" placeholder="password" onKeyUp={(e) => enterPressed(e)} />
                     <Button onClick={login} padding="0px 10px 2px 10px" width="8rem" height="1.7rem">Entrar</Button>
                 </Flex>
             </Flex>
