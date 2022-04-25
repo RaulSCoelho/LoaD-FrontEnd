@@ -23,7 +23,7 @@ function Chat() {
     const day = `${String(currentDay).length === 1 ? `0${currentDay}` : currentDay}/${String(currentMonth).length === 1 ? `0${currentMonth + 1}` : currentMonth + 1}/${currentYear}`
     const time = `${String(hour).length === 1 ? '0' + hour : hour}:${String(minutes).length === 1 ? '0' + minutes : minutes}`
 
-    let count = 0
+    let dayChange = false
     let messageDay = ""
 
     useEffect(() => {
@@ -130,15 +130,15 @@ function Chat() {
 
         if (messageDay !== props.day) {
             messageDay = props.day
-            count = 1
+            dayChange = true
         } else {
-            count = 0
+            dayChange = false
         }
 
         return (<>
             <Flex>
                 <ResponsiveTitle fontSize="15px" viewWidth="4vw" color="#757575">
-                    {count === 1 ? props.day : ""}
+                    {dayChange ? props.day : ""}
                 </ResponsiveTitle>
             </Flex>
             <Flex justify={props.justify} padding="10px 0 10px 0 !important">
