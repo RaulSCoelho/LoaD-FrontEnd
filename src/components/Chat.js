@@ -99,7 +99,7 @@ function Chat() {
                     placeholder="Message"
                     onInput={(e) => { setMessage(e.target.value); textBox(e.target) }}
                     onKeyUp={(e) => { if (e.keyCode === 13) sendMessage() }}
-                    onKeyDown={(e) => { if (e.key === 'Enter') e.preventDefault() }}
+                    onKeyDown={(e) => { if (e.key === 'Enter') { e.preventDefault(); textBox(e.target) } }}
                     color="white"
                     height="36px"
                     width="80%"
