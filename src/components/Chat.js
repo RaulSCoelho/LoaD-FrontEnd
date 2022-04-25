@@ -21,7 +21,7 @@ function Chat() {
     const minutes = new Date().getMinutes()
 
     const day = `${String(currentDay).length === 1 ? `0${currentDay}` : currentDay}/${String(currentMonth).length === 1 ? `0${currentMonth + 1}` : currentMonth + 1}/${currentYear}`
-    const time = `${String(hour).length === 1 ? '0' + hour : hour}:${String(minutes).length === 1 ? '0' + minutes : minutes}`
+    const time = `${String(hour).length === 1 ? `0${hour}` : hour}:${String(minutes).length === 1 ? `0${minutes}` : minutes}`
 
     let dayChange = false
     let messageDay = ""
