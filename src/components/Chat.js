@@ -37,7 +37,7 @@ function Chat() {
 
     async function sendMessage() {
         const textArea = document.querySelector('.textArea')
-        const chat = document.querySelector('.chat')
+        const element = document.querySelector('.chat')
         await api.post('chat', {
             message: message,
             user: {
@@ -49,13 +49,12 @@ function Chat() {
         })
         getMessages()
         textArea.value = ""
-        textBox(textArea)
-        chat.style = "scroll-behavior: smooth;"
-        setTimeout(() => chat.scrollTop = chat.scrollHeight, 300)
+        element.style = "scroll-behavior: smooth;"
+        setTimeout(() => element.scrollTop = element.scrollHeight, 300)
     }
 
     function textBox(e) {
-        if (e.value.length * 8.5 < e.offsetWidth) {
+        if (e.value.length * 8.5 < 30) {
             e.style.height = "36px"
         } else {
             e.style.height = "auto"
@@ -67,12 +66,6 @@ function Chat() {
         await api.delete(`chat/${id}`).then(res => {
             getMessages()
         })
-    }
-
-    function enterPressed(e) {
-        if (e.keyCode === 13) {
-            sendMessage()
-        }
     }
 
     function preventBreakLine(e) {
@@ -116,7 +109,7 @@ function Chat() {
                     className="textArea"
                     placeholder="Message"
                     onInput={(e) => { setMessage(e.target.value); textBox(e.target) }}
-                    onKeyUp={(e) => enterPressed(e)}
+                    onKeyUp={(e) => { if (e.keyCode === 13) sendMessage() }}
                     onKeyDown={(e) => preventBreakLine(e)}
                     color="white"
                     width="80%"
