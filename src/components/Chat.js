@@ -66,6 +66,15 @@ function Chat() {
         })
     }
 
+    function preventBreakLine(e) {
+        const textArea = document.querySelector('.textArea')
+        if (e.key === 'Enter') {
+            e.preventDefault()
+            textArea.value = ""
+            textBox(e.target)
+        }
+    }
+
     return (
         <Flex direction="column" width="80%" height="85vh" bgColor="rgb(20, 20, 20)" borderRadius="10px" justify="end">
             <Flex className="chat" overflowY="scroll" overscrollBehavior="none" alignItems="unset">
@@ -99,7 +108,7 @@ function Chat() {
                     placeholder="Message"
                     onInput={(e) => { setMessage(e.target.value); textBox(e.target) }}
                     onKeyUp={(e) => { if (e.keyCode === 13) sendMessage() }}
-                    onKeyDown={(e) => { if (e.key === 'Enter') { e.preventDefault(); textBox(e.target) } }}
+                    onKeyDown={(e) => preventBreakLine(e)}
                     color="white"
                     height="36px"
                     width="80%"
