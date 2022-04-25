@@ -37,7 +37,7 @@ function Chat() {
 
     async function sendMessage() {
         const textArea = document.querySelector('.textArea')
-        const element = document.querySelector('.chat')
+        const chat = document.querySelector('.chat')
         await api.post('chat', {
             message: message,
             user: {
@@ -49,8 +49,9 @@ function Chat() {
         })
         getMessages()
         textArea.value = ""
-        element.style = "scroll-behavior: smooth;"
-        setTimeout(() => element.scrollTop = element.scrollHeight, 300)
+        textBox(textArea)
+        chat.style = "scroll-behavior: smooth;"
+        setTimeout(() => chat.scrollTop = chat.scrollHeight, 300)
     }
 
     function textBox(e) {

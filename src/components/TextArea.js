@@ -6,11 +6,12 @@ export const TextArea = styled("textarea")(
         overflowY: "scroll",
         borderRadius: "6px",
         scrollbarWidth: "none",
+        transition: "300ms",
 
         "::-webkit-scrollbar": {
             display: "none"
         },
-        
+
     },
     (props) => {
         return {
