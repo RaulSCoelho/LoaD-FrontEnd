@@ -11,7 +11,6 @@ function Chat() {
     const { user } = useContext(UserContext)
     const User = user ? user : ""
     const [message, setMessage] = useState("")
-    const [messageHeight, setMessageHeight] = useState("")
     const [chat, setChat] = useState("")
 
     const currentDay = new Date().getDate()
@@ -55,9 +54,12 @@ function Chat() {
     }
 
     function textBox(e) {
-        e.style.height = (e.value.length + 10) + "px"
-        setMessageHeight((e.value.length + 20) + "px")
-        if (e.value.length === 0) setMessageHeight("54.5px")
+        if (e.value.length * 8.5 < e.offsetWidth) {
+            e.style.height = "36px"
+        } else {
+            e.style.height = "auto"
+            e.style.height = e.scrollHeight + "px"
+        }
     }
 
     async function removeMessage(id) {
@@ -102,7 +104,7 @@ function Chat() {
                     ) : <></>}
                 </Flex>
             </Flex>
-            <Flex height={messageHeight} minHeight="54.5px" maxHeight="110px" justify="space-evenly" bgColor="rgb(37, 37, 37)" borderRadius="10px" borderTopLeftRadius="0px" borderTopRightRadius="0px">
+            <Flex height="auto" justify="space-evenly" bgColor="rgb(37, 37, 37)" borderRadius="10px" borderTopLeftRadius="0px" borderTopRightRadius="0px">
                 <TextArea
                     className="textArea"
                     placeholder="Message"
@@ -110,9 +112,8 @@ function Chat() {
                     onKeyUp={(e) => { if (e.keyCode === 13) sendMessage() }}
                     onKeyDown={(e) => preventBreakLine(e)}
                     color="white"
-                    height="36px"
                     width="80%"
-                    minHeight="36px"
+                    height="36px"
                     maxHeight="100px"
                     border="none"
                     padding="5px"
