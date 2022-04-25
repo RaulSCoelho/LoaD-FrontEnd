@@ -69,6 +69,12 @@ function Chat() {
         })
     }
 
+    function enterPressed(e) {
+        if (e.keyCode === 13) {
+            sendMessage()
+        }
+    }
+
     function preventBreakLine(e) {
         const textArea = document.querySelector('.textArea')
         if (e.key === 'Enter') {
@@ -110,7 +116,7 @@ function Chat() {
                     className="textArea"
                     placeholder="Message"
                     onInput={(e) => { setMessage(e.target.value); textBox(e.target) }}
-                    onKeyUp={(e) => { if (e.keyCode === 13) sendMessage() }}
+                    onKeyUp={(e) => enterPressed(e)}
                     onKeyDown={(e) => preventBreakLine(e)}
                     color="white"
                     width="80%"
