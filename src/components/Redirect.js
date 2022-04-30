@@ -1,9 +1,7 @@
 let url = "https://lifeofadream.vercel.app"
 
-if (window.location.hostname === "localhost") {
-    url = "http://localhost:3000"
-}
-
 export const Redirect = (path) => {
-    window.location.href = url + path
+    window.location.href = window.location.hostname === "localhost" ? `http://localhost:3000${path}`
+        : window.location.hostname === "192.168.0.87" ? `http://192.168.0.87:3000${path}`
+            : url + path
 }
