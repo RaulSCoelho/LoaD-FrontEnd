@@ -17,7 +17,7 @@ function Login() {
             username: username,
             password: password
         }).then(res => {
-            Redirect('/')
+            //Redirect('/')
         }).catch(err => {
             const loginError = document.querySelector('#loginError')
             loginError.style = "color: red;"
