@@ -38,6 +38,14 @@ function AddClasses() {
         })
     }
 
+    function add(id, text, array) {
+        if (array.indexOf(text) === -1) {
+            let inputText = document.querySelector(`#${id}`)
+            if (text !== "") array.push(text)
+            inputText.value = ""
+        }
+    }
+
     function clear() {
         videosArray = []
         titlesArray = []
@@ -58,9 +66,9 @@ function AddClasses() {
                     {module !== "0" && module !== "" ? `Urls: ${videosLength} Titles: ${titlesLength} Thumbnails: ${thumbnailsLength}` : ""}
                 </ResponsiveTitle>
                 <InputProfile label="Module:" type="number" setValue={(e) => { setModule(e.target.value); message.innerHTML = "" }} placeholder="0" display="none" width="350px" />
-                <InputProfile label="Urls:" type="text" setValue={(e) => { setVideos(e.target.value); message.innerHTML = "" }} Add={() => { if (videos !== "") videosArray.push(videos); setVideosLength(videosArray.length) }} placeholder="https://www.example.com" />
-                <InputProfile label="Title:" type="text" setValue={(e) => { setTitles(e.target.value); message.innerHTML = "" }} Add={() => { if (titles !== "") titlesArray.push(titles); setTitlesLength(titlesArray.length) }} placeholder="Video Title" />
-                <InputProfile label="Thumbnail:" type="text" setValue={(e) => { setThumbnails(e.target.value); message.innerHTML = "" }} Add={() => { if (thumbnails !== "") thumbnailsArray.push(thumbnails); setThumbnailsLength(thumbnailsArray.length) }} placeholder="Video Thumbnail" />
+                <InputProfile id="urls" label="Urls:" type="text" setValue={(e) => { setVideos(e.target.value); message.innerHTML = "" }} Add={() => { add("urls", videos, videosArray); setVideosLength(videosArray.length) }} placeholder="https://www.example.com" />
+                <InputProfile id="title" label="Title:" type="text" setValue={(e) => { setTitles(e.target.value); message.innerHTML = "" }} Add={() => { add("title", titles, titlesArray); setTitlesLength(titlesArray.length) }} placeholder="Video Title" />
+                <InputProfile id="thumbnail" label="Thumbnail:" type="text" setValue={(e) => { setThumbnails(e.target.value); message.innerHTML = "" }} Add={() => { add("thumbnail", thumbnails, thumbnailsArray); setThumbnailsLength(thumbnailsArray.length) }} placeholder="Video Thumbnail" />
                 <Flex>
                     <Button onClick={create} bgColor="transparent" hoverBg="rgba(255, 255, 255, 0.2)" color="white" padding="0px 5px 2px 5px" border="none">
                         Add Module
@@ -82,7 +90,7 @@ export function InputProfile(props) {
                     {props.label}
                 </ResponsiveTitle>
                 <Flex justify="space-between">
-                    <Input onInput={props.setValue} type={props.type} placeholder={props.placeholder} padding="0 0 0 0" width={props.width} color="white" bgColor="transparent" border="none" />
+                    <Input id={props.id} onInput={props.setValue} type={props.type} placeholder={props.placeholder} padding="0 0 0 0" width={props.width || "80%"} color="white" bgColor="transparent" border="none" />
                     <Button onClick={props.Add} height="24px" width="44px" fontSize="18px" display={props.display}>Add</Button>
                 </Flex>
             </Flex>
