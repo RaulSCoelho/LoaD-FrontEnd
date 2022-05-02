@@ -6,7 +6,7 @@ export const VideoDiv = styled("div")(
         ".currentVideo": {
             "@media (max-width: 1258px)": {
                 width: "calc(100vw - 280px)",
-                height: "calc(calc(100vw - 180px) * 0.5625)",
+                height: "calc(calc(100vw - 280px) * 0.5625)",
             },
             "@media(max-width: 920px)": {
                 marginTop: "5px",
