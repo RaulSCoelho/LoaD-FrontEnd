@@ -21,7 +21,7 @@ function App() {
   const dispatch = useDispatch()
   const isLogged = useSelector(state => state.logged)
   const [isNotLogged, setIsNotLogged] = useState(false)
-console.log("teste");
+  
   useEffect(() => {
     const fetchData = async () => {
       await api.get('classes').then(res => {
